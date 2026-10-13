@@ -1,0 +1,6 @@
+const fs=require("node:fs"), vm=require("node:vm"), path=require("node:path");
+const {test}=require("node:test"), assert=require("node:assert/strict");
+const root=path.resolve(__dirname,"../..");
+const context=vm.createContext({window:{}});
+for(const file of ["dist/technical-graph.js","dist/tire-demo/architecture.js"]){vm.runInContext(fs.readFileSync(path.join(root,file),"utf8"),context);}
+for(const mode of ["local","cloud"]){test(`${mode} architecture connects declared endpoints without crossing components`,()=>{const graph=context.window.diagramGraph, model=context.window.tireArchitecture.model(mode);graph.validate(model);assert.equal(model.nodes.length,9);for(const edge of model.paths){const points=[...graph.route(model,edge).matchAll(/[ML]([\d.-]+) ([\d.-]+)/g)].map((m)=>({x:Number(m[1]),y:Number(m[2])}));assert.ok(points.length>=2);for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i];assert.ok(a.x===b.x||a.y===b.y);for(const n of model.nodes){if(n.id===edge[2]||n.id===edge[3])continue;const crossing=a.x===b.x ? a.x>n.x&&a.x<n.x+n.w&&Math.max(a.y,b.y)>n.y&&Math.min(a.y,b.y)<n.y+n.h : a.y>n.y&&a.y<n.y+n.h&&Math.max(a.x,b.x)>n.x&&Math.min(a.x,b.x)<n.x+n.w;assert.equal(crossing,false,`${edge[2]}→${edge[3]} crosses ${n.id}`);}}}});}

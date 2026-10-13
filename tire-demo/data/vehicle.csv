@@ -1,0 +1,6 @@
+vehicle_id,name,size,min_load_index,min_speed_rank,fitment_version
+V01,Sample sedan,225/55R17,98,4,illustrative-fitment-v1
+V02,Sample SUV,235/60R18,98,4,illustrative-fitment-v1
+V03,Sample compact,215/60R16,98,4,illustrative-fitment-v1
+V04,Sample sport sedan,245/45R19,98,4,illustrative-fitment-v1
+V05,Sample hatchback,205/55R16,98,4,illustrative-fitment-v1

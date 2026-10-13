@@ -1,0 +1,9 @@
+store_id,name,kind,latitude,longitude,lead_days
+S01,Loop retailer,store,41.882,-87.63,0
+S02,West stockroom,warehouse,41.88,-87.72,1
+S03,North retailer,store,41.99,-87.66,0
+S04,Regional warehouse,warehouse,42.02,-87.9,2
+S05,South retailer,store,41.75,-87.63,0
+S06,South stockroom,warehouse,41.7,-87.7,1
+S07,Lake retailer,store,41.72,-87.6,0
+S08,South regional warehouse,warehouse,41.6,-87.85,2

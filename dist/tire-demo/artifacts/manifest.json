@@ -1,0 +1,28 @@
+{
+  "sha256": {
+    "README.md": "4eac566f11fcfcd0f3c262389f8993343d5d898fae13e8319eebf2a04d81eb20",
+    "adr-01-correctness.md": "9d2c651a8fa63eec9bcaa1be961fc267641e453335afb1347228ac281b37b61b",
+    "adr-02-adapters.md": "db1886b184d7ef9464e9b58f7b7d6c05a3484868f8bdc469ef65689aece2251d",
+    "adr-03-inventory.md": "6d085366d663af7b5dca6ce633d2932ec0d4e3fdd3626afbd86aa4b158322288",
+    "adr-04-ranking.md": "7a1180449b53e2ec513a16816dee779ad76898822e9b6fa2ce8e2b0c953cc7e1",
+    "architecture.md": "71def68919f4b971e6369b6e3b62fdbf22c2cb5b8a9c02ef4aabc6c2fb10fd09",
+    "azure-deployment.md": "0679df20ea6f69d02dbf8da9eaa3e2a1534d3e1184a8d3980ebd2ace060ad9ab",
+    "cloud-architecture.svg": "9d5434c5c75f36413dd911345c641f0e3f6f9a660a0c7972e15f5fc191d3cf2a",
+    "data-model.svg": "352b385b1587f48995a528426dcb5b43a6ae45b8e5b3523e430d722d27061db9",
+    "evaluation.json": "28d03d758c6a7a158f4d3f78e4699ade665033ce01d94404825889d02259e507",
+    "evaluation.md": "2e6d3fb01bb749e86ff3886a68a3f6c6783a2f2fd4258751fc635777094c758a",
+    "ingestion-flow.svg": "7bcf6410cbf57e62706a82e37e45a5608cbaeac9bbfaf06885710a6b2e15c75d",
+    "local-architecture.svg": "8c3c291133a25de6cf70864e4dd6132798d9f2432d939059e4f7218267af8e36",
+    "openapi.json": "6b813819533fe52a8b1bf5df7612807a7675e69fffe7910a933f5a220171ea6f",
+    "operations.md": "ce29b811d135273a64993617055d531480dacd79cf4e02f0dbcb38cd2e84045b",
+    "review.md": "eb08d20a8380240fcda93d1468fab88e5f8e6a23d8b0401072ef82227b929b1e",
+    "runtime-sequence.svg": "98f684ac2dbb736036f5a577fcdd985fd67166512a2e4cb3766779252de88214",
+    "snowflake-setup.md": "7cacff990670beddef8781f8d89c20b2c292fbacf467956419c1f5a695872e35",
+    "walkthrough-poster.png": "912751288abd8905be437842337a822cee406c9a45e65056fd8e894daa5855a1",
+    "walkthrough-refinement.json": "3726bce538f0af9c2c2b7f99e22de4d9e18917f8d49560290bdf731c9ed54f55",
+    "walkthrough-script.md": "c5c88b540b1af5e82139977c517272d046579c1abdc67204160ec711f0aae238",
+    "walkthrough.mp4": "1669be953e0f27d20c81632195fa6236250317d1ffec6adeb203cdebb339128f",
+    "walkthrough.vtt": "b1bbe631d232dc710dd74fc84a66778ba330d04f8dc4f4d5a8a0dce79f1e9448"
+  },
+  "scope": "tire-recommendation-demo-public"
+}

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tire-recommendation-demo"
+version = "1.0.0"
+description = "Independent Tire Recommendation Demo with synthetic data"
+requires-python = ">=3.12"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic>=2.10,<3", "python-dotenv>=1,<2", "httpx>=0.28,<1"]
+
+[project.optional-dependencies]
+cloud = ["snowflake-connector-python>=3.14,<5"]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1", "mypy>=1.15,<2", "pip-audit>=2.9,<3", "pre-commit>=4,<5", "pip-tools>=7,<8"]
+media = ["Pillow>=11,<13", "imageio-ffmpeg>=0.6,<1"]
+
+[tool.setuptools.packages.find]
+where = ["tire-demo/src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/evidence.py" = ["E501"]
+"tire-demo/tests/*" = ["S105", "S106"]
+"tire-demo/src/solution_labs/artifacts.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["tire-demo/src", "scripts/evidence.py", "scripts/smoke.py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tire-demo/tests"]
+addopts = "-q --cov=tire_demo --cov-fail-under=90 --cov-report=term-missing --cov-report=json:runtime/coverage.json"
+markers = ["cloud: explicitly enabled live Snowflake checks"]
+
+[tool.coverage.run]
+omit = ["*/cli.py", "*/media.py", "*/artifacts.py", "*/evaluation.py"]

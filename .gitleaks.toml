@@ -1,0 +1,20 @@
+title = "Portfolio evidence scan with narrow non-secret exceptions"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Verified SHA-256 evidence digests are not API credentials"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^dist/(tire|master|beauty)-demo/artifacts/manifest\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"(adr-03-access\.md|openapi\.json)"\s*:\s*"[a-f0-9]{64}",?\s*$''']
+
+[[allowlists]]
+description = "An empty passphrase followed by the disabled test flag is not a secret"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^\.env\.example$''']
+regexTarget = "secret"
+regexes = ['''^SNOWFLAKE_TEST_ENABLED(=0)?$''']

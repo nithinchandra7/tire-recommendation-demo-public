@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tire Lab — Nithin Chandra</title>
+    <meta
+      name="description"
+      content="An independent tire recommendation demonstration: inspect compatibility rules, inventory, alternatives and the architecture behind them."
+    />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="../technical-graph.css" />
+    <script src="../technical-graph.js" defer></script>
+    <script src="architecture.js" defer></script>
+    <script src="helpers.js" defer></script>
+    <script src="demo.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">Skip to recommendation workspace</a>
+    <header>
+      <a class="brand" href="https://nithinchandra.com"
+        ><b>nc<span>.</span></b
+        ><span
+          >Nithin Chandra<br /><small>SOLUTION ARCHITECTURE</small></span
+        ></a
+      ><a href="https://nithinchandra.com"
+        >Original case study <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow"><i></i> INDEPENDENT BUILD / RETAIL DECISIONING</p>
+          <h1>A better answer.<br /><em>Before the customer leaves.</em></h1>
+          <p>
+            Find compatible tires, see available inventory, and offer a useful
+            alternative. Then inspect the decisions behind the recommendation.
+          </p>
+        </div>
+        <aside>
+          <span class="eyebrow">THE PROOF IS IN THE FLOW</span>
+          <div class="hero-flow">
+            <span>Requirements</span><b>→</b><span>Evidence</span><b>→</b
+            ><span>Recommendation</span>
+          </div>
+          <div class="facts">
+            <div><strong>400</strong><span>fictional products</span></div>
+            <div><strong>8</strong><span>sample locations</span></div>
+            <div><strong>5</strong><span>ranking factors</span></div>
+          </div>
+        </aside>
+      </section>
+      <div class="provenance">
+        <span>Synthetic data</span><span>Illustrative fitment</span
+        ><span>Simulated retailer identity</span
+        ><span id="runtime-status" role="status">Connecting to local API…</span>
+      </div>
+      <nav class="view-tabs" role="tablist" aria-label="Demo views">
+        <button
+          id="tab-workspace"
+          role="tab"
+          data-view="workspace"
+          aria-controls="workspace"
+          aria-selected="true"
+        >
+          Retailer workspace</button
+        ><button
+          id="tab-architecture"
+          role="tab"
+          data-view="architecture"
+          aria-controls="architecture"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          Inside the architecture</button
+        ><button
+          id="tab-evidence"
+          role="tab"
+          data-view="evidence"
+          aria-controls="evidence"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          Evidence & decisions</button
+        ><button
+          id="tab-walkthrough"
+          role="tab"
+          data-view="walkthrough"
+          aria-controls="walkthrough"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          Two-minute walkthrough
+        </button>
+      </nav>
+      <section id="workspace" role="tabpanel" aria-labelledby="tab-workspace">
+        <div class="workspace-grid">
+          <aside class="request-panel">
+            <div class="panel-title">
+              <span class="eyebrow">01 / CUSTOMER REQUIREMENTS</span
+              ><span class="live-dot">LOCAL DEMO</span>
+            </div>
+            <form id="recommend-form">
+              <label
+                >Sample vehicle<select id="vehicle" name="vehicle">
+                  <option value="V01">Sample sedan</option>
+                </select></label
+              ><label
+                >Tire size<select id="size" name="size">
+                  <option>225/55R17</option>
+                </select></label
+              ><label
+                >Retailer location<select id="store" name="store">
+                  <option value="S01">Loop retailer</option>
+                </select></label
+              >
+              <div class="input-pair">
+                <label
+                  >Quantity<input
+                    id="quantity"
+                    name="quantity"
+                    type="number"
+                    value="4"
+                    min="1"
+                    max="8"
+                    required /></label
+                ><label
+                  >Budget / tire ($)<input
+                    id="budget"
+                    name="budget"
+                    type="number"
+                    value="150"
+                    min="25"
+                    max="1000"
+                    step="0.01"
+                    required
+                /></label>
+              </div>
+              <div class="input-pair">
+                <label
+                  >Season<select id="season" name="season">
+                    <option value="any">Any season</option>
+                    <option value="all-season">All-season</option>
+                    <option value="winter">Winter</option>
+                    <option value="summer">Summer</option>
+                  </select></label
+                ><label
+                  >Max lead time<select id="lead" name="lead">
+                    <option value="0">Today</option>
+                    <option value="1">1 day</option>
+                    <option value="3" selected>3 days</option>
+                    <option value="7">7 days</option>
+                  </select></label
+                >
+              </div>
+              <label
+                >What matters most?<select id="priority" name="priority">
+                  <option value="balanced">Balanced choice</option>
+                  <option value="comfort">Ride comfort</option>
+                  <option value="wet">Wet grip</option>
+                  <option value="budget">Lower price</option>
+                </select></label
+              ><button class="primary" id="run" type="submit">
+                Find the right options <span aria-hidden="true">→</span>
+              </button>
+            </form>
+            <div class="scenario-box">
+              <span class="eyebrow">EXPLORE A DIFFICULT CASE</span
+              ><label
+                >Scenario<select id="scenario">
+                  <option value="standard">Standard recommendation</option>
+                  <option value="nearby">No stock at this location</option>
+                  <option value="quantity">Only two available locally</option>
+                  <option value="stale">Local inventory is stale</option>
+                  <option value="no_match">Budget too low</option>
+                  <option value="upgrade">Find an upgrade</option>
+                </select></label
+              >
+              <p id="scenario-note">
+                Fresh stock, compatible products, and a balanced recommendation.
+              </p>
+              <label
+                >Simulated retailer<select id="retailer">
+                  <option value="north">North network · 4 locations</option>
+                  <option value="south">South network · 4 locations</option>
+                </select></label
+              >
+              <p class="small">
+                These identities demonstrate server-side scope checks. They are
+                not production authentication.
+              </p>
+            </div>
+          </aside>
+          <div class="results-panel">
+            <div class="results-heading">
+              <div>
+                <span class="eyebrow">02 / RECOMMENDATION EVIDENCE</span>
+                <h2>Good options.<br /><em>Clear reasons.</em></h2>
+              </div>
+              <div class="run-meta" id="run-meta">
+                Make a selection to begin.
+              </div>
+            </div>
+            <div id="message" role="status" aria-live="polite"></div>
+            <div id="result-summary"></div>
+            <div id="recommendations">
+              <div class="empty-state">
+                <div class="tire-glyph" aria-hidden="true">◎</div>
+                <h3>Start with the customer.</h3>
+                <p>
+                  Set the requirements, then explore recommendations and the
+                  underlying decision trace.
+                </p>
+              </div>
+            </div>
+            <div id="premium"></div>
+            <div id="compare-tray" hidden>
+              <span id="compare-count"></span
+              ><button id="compare-open" class="secondary">
+                Compare selected</button
+              ><button id="compare-clear" class="link-button">Clear</button>
+            </div>
+            <form id="follow-up-form" class="follow-up" hidden>
+              <label for="follow-up">Refine the recommendation</label>
+              <div>
+                <input
+                  id="follow-up"
+                  maxlength="300"
+                  placeholder="Try: quieter tires under $140"
+                /><button type="submit" class="secondary">Refine →</button>
+              </div>
+              <p>
+                Supported preferences: comfort, wet grip, budget, and season.
+                Typed requirements stay enforced.
+              </p>
+            </form>
+            <details class="trace-panel" id="trace-panel">
+              <summary>
+                Inspect this execution <span id="trace-time"></span
+                ><span aria-hidden="true">+</span>
+              </summary>
+              <div id="trace-content">
+                <p>Run a recommendation to inspect its evidence.</p>
+              </div>
+            </details>
+            <div class="stock-note">
+              Availability is a timestamped observation. Confirm stock with the
+              inventory system before reservation or ordering.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="architecture"
+        role="tabpanel"
+        aria-labelledby="tab-architecture"
+        hidden
+      >
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">FOLLOW THE SYSTEM</span>
+            <h2>One request.<br /><em>Visible decisions.</em></h2>
+            <p>
+              Select a component to highlight its connections. The local
+              implementation and cloud reference share logical boundaries.
+            </p>
+          </div>
+          <div class="architecture-controls">
+            <label
+              >Architecture view<select id="architecture-mode">
+                <option value="local">Implemented local demo</option>
+                <option value="cloud">Snowflake / Azure reference</option>
+              </select></label
+            ><a
+              id="architecture-download"
+              class="secondary"
+              href="artifacts/local-architecture.svg"
+              download
+              >Download SVG ↓</a
+            >
+          </div>
+        </div>
+        <div class="map-shell">
+          <div id="map-key"></div>
+          <button id="map-reset" class="reset-connections">
+            Show all connections
+          </button>
+          <div id="map"></div>
+          <div class="mobile-component-select">
+            <label
+              >Select component<select id="component-select"></select
+            ></label>
+          </div>
+          <div
+            id="component-detail"
+            class="component-detail"
+            aria-live="polite"
+          ></div>
+        </div>
+        <p class="small" id="architecture-note"></p>
+        <div class="contract-grid">
+          <article>
+            <span class="eyebrow">DATA CONTRACT</span>
+            <h3>Product + approved fitment</h3>
+            <p>
+              Stable product ID, size, minimum load/speed, fitment version.
+              Sample fitment is illustrative.
+            </p>
+          </article>
+          <article>
+            <span class="eyebrow">FRESHNESS CONTRACT</span>
+            <h3>Inventory + location</h3>
+            <p>
+              Quantity, observation time, source event, delivery estimate. Older
+              and duplicate updates cannot overwrite newer stock.
+            </p>
+          </article>
+          <article>
+            <span class="eyebrow">RESPONSE CONTRACT</span>
+            <h3>Recommendation + evidence</h3>
+            <p>
+              Compatible options, factor contributions, scope, filter revision,
+              request ID, versions, and measured timing.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
+        id="evidence"
+        role="tabpanel"
+        aria-labelledby="tab-evidence"
+        hidden
+      >
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">INSPECT THE WORK</span>
+            <h2>Built to be<br /><em>questioned.</em></h2>
+            <p>
+              A reproducible implementation, explicit tradeoffs, and measured
+              results from synthetic scenarios.
+            </p>
+          </div>
+          <a class="secondary" href="artifacts/source.zip" download
+            >Download demo source ↓</a
+          >
+        </div>
+        <div class="evidence-grid">
+          <article>
+            <span class="eyebrow">ORIGINAL ENGAGEMENT</span>
+            <h3>My contribution</h3>
+            <p>
+              Discovery, stakeholder and end-user conversations, requirements
+              and PRD, technical architecture, and a bounded prototype with
+              actual data. The engineering team supported production build and
+              deployment.
+            </p>
+            <a href="https://nithinchandra.com">Read the client case study ↗</a>
+          </article>
+          <article>
+            <span class="eyebrow">INDEPENDENT DEMONSTRATION</span>
+            <h3>What this proves</h3>
+            <p>
+              Hands-on implementation of scoped recommendation logic, inventory
+              freshness, state transitions, observable decisions, and failure
+              handling. All demo data and fitment records are fictional.
+            </p>
+            <a href="artifacts/README.md" download>Setup and source guide ↓</a>
+          </article>
+          <article>
+            <span class="eyebrow">MEASURED HERE</span>
+            <h3>Scenario evaluation</h3>
+            <p>
+              Actual local correctness checks and timings, with workload size,
+              measurement conditions and cloud verification limits recorded.
+            </p>
+            <a href="artifacts/evaluation.md" download>Read the evaluation ↓</a
+            ><a href="artifacts/evaluation.json" download
+              >Machine-readable results ↓</a
+            >
+          </article>
+        </div>
+        <h3 class="decision-title">The choices behind the implementation.</h3>
+        <div class="decision-grid">
+          <article>
+            <span>ADR 01</span>
+            <h3>SQL establishes eligibility.</h3>
+            <p>
+              Compatibility, stock and freshness are deterministic constraints.
+              AI can select explanation emphasis; application code renders
+              product facts.
+            </p>
+            <a href="artifacts/adr-01-correctness.md" download
+              >Decision record ↓</a
+            >
+          </article>
+          <article>
+            <span>ADR 02</span>
+            <h3>Two adapters, one contract.</h3>
+            <p>
+              SQLite keeps the demonstration reproducible. Snowflake uses
+              parameterized warehouse queries and a separately validated
+              connection.
+            </p>
+            <a href="artifacts/adr-02-adapters.md" download
+              >Decision record ↓</a
+            >
+          </article>
+          <article>
+            <span>ADR 03</span>
+            <h3>Stock has a clock.</h3>
+            <p>
+              Inventory is independently timestamped and loaded idempotently. A
+              conversation never converts an old observation into fresh
+              availability.
+            </p>
+            <a href="artifacts/adr-03-inventory.md" download
+              >Decision record ↓</a
+            >
+          </article>
+          <article>
+            <span>ADR 04</span>
+            <h3>Ranking exposes its tradeoffs.</h3>
+            <p>
+              Fixed feature normalization, explicit weights, stable
+              tie-breaking, and separate above-budget upgrade suggestions.
+            </p>
+            <a href="artifacts/adr-04-ranking.md" download>Decision record ↓</a>
+          </article>
+        </div>
+        <div class="artifact-links">
+          <a href="artifacts/architecture.md" download
+            >Architecture & boundaries ↓</a
+          ><a href="artifacts/data-model.svg" download>Data model ↓</a
+          ><a href="artifacts/runtime-sequence.svg" download
+            >Runtime sequence ↓</a
+          ><a href="artifacts/ingestion-flow.svg" download>Ingestion flow ↓</a
+          ><a href="artifacts/openapi.json" download>OpenAPI contract ↓</a
+          ><a href="artifacts/snowflake-setup.md" download
+            >Snowflake configuration ↓</a
+          ><a href="artifacts/azure-deployment.md" download
+            >Azure deployment guide ↓</a
+          ><a href="artifacts/review.md" download>Review & verification ↓</a>
+        </div>
+      </section>
+      <section
+        id="walkthrough"
+        role="tabpanel"
+        aria-labelledby="tab-walkthrough"
+        hidden
+      >
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">WATCH THE REASONING</span>
+            <h2>From a requirement<br /><em>to a useful answer.</em></h2>
+            <p>
+              Two-minute visual walkthrough using actual synthetic-demo outputs.
+              Captions explain the decisions and platform boundaries.
+            </p>
+          </div>
+          <button id="guided-tour" class="secondary">
+            Run live guided demo →
+          </button>
+        </div>
+        <video
+          id="walkthrough-video"
+          controls
+          preload="metadata"
+          poster="artifacts/walkthrough-poster.png"
+        >
+          <source src="artifacts/walkthrough.mp4" type="video/mp4" />
+          <track
+            kind="captions"
+            src="artifacts/walkthrough.vtt"
+            srclang="en"
+            label="English"
+            default
+          />
+          Your browser does not support video. Use the download below.
+        </video>
+        <div class="artifact-links">
+          <a href="artifacts/walkthrough.mp4" download>Download walkthrough ↓</a
+          ><a href="artifacts/walkthrough-script.md" download
+            >Script & storyboard ↓</a
+          ><a href="artifacts/walkthrough.vtt" download>Captions ↓</a>
+        </div>
+        <p class="small">
+          This is an independently created demonstration. It does not depict the
+          original client application or verify its production outcomes.
+        </p>
+      </section>
+      <footer>
+        <p>
+          Designed and built by Nithin Chandra · Independent portfolio
+          demonstration
+        </p>
+        <a href="mailto:nithinchandra357@gmail.com"
+          >Let’s talk architecture ↗</a
+        >
+      </footer>
+    </main>
+    <dialog id="compare-dialog">
+      <div class="dialog-heading">
+        <h2>Compare the facts.</h2>
+        <button id="compare-close" class="secondary">Close ×</button>
+      </div>
+      <div id="comparison"></div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:20.000
+Four compatible tires, a $150 budget and a three-day lead time. All products, stock and fitment records are fictional.
+
+2
+00:00:20.000 --> 00:00:40.000
+SQL enforces compatibility and fresh stock, then ranks eligible products. Product cards expose prices, locations and factor scores.
+
+3
+00:00:40.000 --> 00:01:00.000
+The selected store has no stock in this request. Compatible alternatives come from another location within the retailer's assigned scope.
+
+4
+00:01:00.000 --> 00:01:20.000
+A follow-up changes the comfort priority and budget before querying. The session revision and resulting options record that transition.
+
+5
+00:01:20.000 --> 00:01:40.000
+The local observation is two hours old and is excluded. Returned stock is fresh; query timing and score contributions are measured evidence.
+
+6
+00:01:40.000 --> 00:02:00.000
+The local demo runs on FastAPI and SQLite. Snowflake and Azure need configuration. Explore the source, diagrams, decisions and evaluation.

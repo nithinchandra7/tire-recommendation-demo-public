@@ -1,0 +1,59 @@
+name: Developer checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: python -m venv .venv
+      - run: .venv/bin/pip install -r requirements-dev.lock
+      - run: .venv/bin/pip install --no-deps --no-build-isolation .
+      - run: npm ci
+      - run: make check
+      - run: make audit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check-results
+          path: |
+            runtime/test-results.xml
+            runtime/coverage.json
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install pinned Gitleaks
+        env:
+          GITLEAKS_VERSION: '8.30.1'
+          GITLEAKS_SHA256: '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb'
+        shell: bash
+        run: |
+          set -euo pipefail
+          artifact="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl --fail --location --silent --show-error --retry 3 \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/${artifact}" \
+            --output "$RUNNER_TEMP/$artifact"
+          printf '%s  %s\n' "$GITLEAKS_SHA256" "$RUNNER_TEMP/$artifact" | sha256sum --check -
+          mkdir -p "$RUNNER_TEMP/gitleaks-bin"
+          tar --extract --gzip --file "$RUNNER_TEMP/$artifact" --directory "$RUNNER_TEMP/gitleaks-bin" gitleaks
+      - name: Scan complete Git history
+        # --all includes the first commit without constructing a nonexistent parent range.
+        run: >-
+          "$RUNNER_TEMP/gitleaks-bin/gitleaks" git --redact --log-opts="--all"
+          --report-format=sarif --report-path="$RUNNER_TEMP/gitleaks.sarif" .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gitleaks-results
+          path: ${{ runner.temp }}/gitleaks.sarif

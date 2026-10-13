@@ -1,0 +1,2382 @@
+{
+  "implementation_fingerprint": "271df3d330d167e324efd246758d94fa7117d38fefac58a16bd9a71ee99ae204",
+  "dataset": "synthetic-v1-seed-7",
+  "products": 400,
+  "locations": 8,
+  "inventory_records": 3200,
+  "environment": {
+    "python": "3.12.14",
+    "backend": "SQLite",
+    "provider": "fact templates",
+    "clock": "2026-10-11T12:00:00+00:00"
+  },
+  "method": "20 sequential runs per scenario including persistence; p95 is nearest-rank.",
+  "limits": "Local synthetic workload only. Snowflake, Azure, cloud models and production outcomes are not measured.",
+  "scenarios": [
+    {
+      "scenario": "standard",
+      "passed": true,
+      "runs": 20,
+      "p50_ms": 4.708,
+      "p95_ms": 5.239,
+      "output": {
+        "session_id": "2e5e48074b7df506ed0c61f361952e6e",
+        "revision": 1,
+        "filters": {
+          "vehicle_id": "V01",
+          "size": "225/55R17",
+          "store_id": "S01",
+          "quantity": 4,
+          "budget": 150.0,
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "season": "any",
+          "priority": "balanced",
+          "max_lead_days": 3
+        },
+        "vehicle": {
+          "vehicle_id": "V01",
+          "name": "Sample sedan",
+          "size": "225/55R17",
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "fitment_version": "illustrative-fitment-v1"
+        },
+        "recommendations": [
+          {
+            "product_id": "T0266",
+            "brand": "Ridgepoint",
+            "name": "Touring 266",
+            "size": "225/55R17",
+            "load_index": 103,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 113.74,
+            "comfort": 10,
+            "wet_grip": 9,
+            "warranty_miles": 70000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 4,
+            "observed_epoch": 1791719280,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.9,
+            "proximity_feature": 1.0,
+            "price_feature": 0.24173333333333336,
+            "delivery_feature": 1,
+            "score": 82.335,
+            "age_minutes": 12.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 22.5,
+              "Price": 4.835,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "4 available at Loop retailer. Illustrative comfort 10/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0266"
+          },
+          {
+            "product_id": "T0046",
+            "brand": "Ridgepoint",
+            "name": "Essential 046",
+            "size": "225/55R17",
+            "load_index": 101,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "all-season",
+            "price": 111.83,
+            "comfort": 9,
+            "wet_grip": 9,
+            "warranty_miles": 50000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 6,
+            "observed_epoch": 1791719160,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.9,
+            "proximity_feature": 1.0,
+            "price_feature": 0.25446666666666673,
+            "delivery_feature": 1,
+            "score": 80.089,
+            "age_minutes": 14.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 22.5,
+              "Price": 5.089,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "6 available at Loop retailer. Illustrative comfort 9/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0046"
+          },
+          {
+            "product_id": "T0176",
+            "brand": "Arcway",
+            "name": "Touring 176",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 99.07,
+            "comfort": 7,
+            "wet_grip": 9,
+            "warranty_miles": 60000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 4,
+            "observed_epoch": 1791719040,
+            "comfort_feature": 0.7,
+            "wet_feature": 0.9,
+            "proximity_feature": 1.0,
+            "price_feature": 0.33953333333333335,
+            "delivery_feature": 1,
+            "score": 76.791,
+            "age_minutes": 16.0,
+            "score_contributions": {
+              "Comfort": 17.5,
+              "Wet grip": 22.5,
+              "Price": 6.791,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "4 available at Loop retailer. Illustrative comfort 7/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0176"
+          },
+          {
+            "product_id": "T0286",
+            "brand": "Ridgepoint",
+            "name": "Essential 286",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "all-season",
+            "price": 144.95,
+            "comfort": 10,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 10/10 and wet grip 8/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 12,
+            "observed_epoch": 1791719760,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.8,
+            "proximity_feature": 1.0,
+            "price_feature": 0.033666666666666734,
+            "delivery_feature": 1,
+            "score": 75.673,
+            "age_minutes": 4.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 20.0,
+              "Price": 0.673,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "12 available at Loop retailer. Illustrative comfort 10/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0286"
+          },
+          {
+            "product_id": "T0291",
+            "brand": "Daymark",
+            "name": "Premium 291",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "winter",
+            "price": 108.1,
+            "comfort": 8,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Premium",
+            "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 5,
+            "observed_epoch": 1791718920,
+            "comfort_feature": 0.8,
+            "wet_feature": 0.8,
+            "proximity_feature": 1.0,
+            "price_feature": 0.2793333333333333,
+            "delivery_feature": 1,
+            "score": 75.587,
+            "age_minutes": 18.0,
+            "score_contributions": {
+              "Comfort": 20.0,
+              "Wet grip": 20.0,
+              "Price": 5.587,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "5 available at Loop retailer. Illustrative comfort 8/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0291"
+          },
+          {
+            "product_id": "T0011",
+            "brand": "Daymark",
+            "name": "Touring 011",
+            "size": "225/55R17",
+            "load_index": 100,
+            "speed_rank": 6,
+            "speed_symbol": "Y",
+            "season": "summer",
+            "price": 130.31,
+            "comfort": 9,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 7,
+            "observed_epoch": 1791718980,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.8,
+            "proximity_feature": 1.0,
+            "price_feature": 0.13126666666666664,
+            "delivery_feature": 1,
+            "score": 75.125,
+            "age_minutes": 17.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 20.0,
+              "Price": 2.625,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "7 available at Loop retailer. Illustrative comfort 9/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0011"
+          }
+        ],
+        "premium_option": {
+          "product_id": "T0002",
+          "brand": "Ridgepoint",
+          "name": "Touring 002",
+          "size": "225/55R17",
+          "load_index": 100,
+          "speed_rank": 4,
+          "speed_symbol": "V",
+          "season": "all-season",
+          "price": 165.0,
+          "comfort": 10,
+          "wet_grip": 10,
+          "warranty_miles": 70000,
+          "tier": "Touring",
+          "description": "Illustrative product specification, not a manufacturer performance claim.",
+          "store_id": "S01",
+          "location_name": "Loop retailer",
+          "kind": "store",
+          "lead_days": 0,
+          "distance": 0.0,
+          "available_quantity": 8,
+          "observed_epoch": 1791719220,
+          "comfort_feature": 1.0,
+          "wet_feature": 1.0,
+          "proximity_feature": 1.0,
+          "price_feature": 0.12,
+          "delivery_feature": 1,
+          "score": 82.4,
+          "above_budget": true,
+          "extra_per_tire": 51.26,
+          "age_minutes": 13.0,
+          "score_contributions": {
+            "Comfort": 25.0,
+            "Wet grip": 25.0,
+            "Price": 2.4,
+            "Proximity": 15.0,
+            "Delivery": 15.0
+          },
+          "explanation": "8 available at Loop retailer. Illustrative comfort 10/10. Illustrative wet grip 10/10.",
+          "highlight_keys": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "citation": "synthetic-catalog:T0002"
+        },
+        "explanation": {
+          "mode": "template",
+          "status": "ready",
+          "highlights": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "context": [
+            {
+              "product_id": "T0002",
+              "description": "Illustrative product specification, not a manufacturer performance claim."
+            },
+            {
+              "product_id": "T0011",
+              "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0046",
+              "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0176",
+              "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0266",
+              "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0286",
+              "description": "Fictional essential tire. Illustrative comfort 10/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0291",
+              "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10."
+            }
+          ],
+          "policy": "Models select emphasis keys; facts and citations are rendered by application code."
+        },
+        "trace": {
+          "request_id": "86debdda25bed001",
+          "stages": [
+            {
+              "component": "api",
+              "label": "Resolve server-defined demo retailer scope",
+              "duration_ms": 0.188
+            },
+            {
+              "component": "state",
+              "label": "Merge typed preferences before querying",
+              "duration_ms": 0.024
+            },
+            {
+              "component": "sql",
+              "label": "SQL eligibility, inventory joins and ranking (one measured query)",
+              "duration_ms": 1.3
+            },
+            {
+              "component": "explain",
+              "label": "Scoped product facts and bounded explanations",
+              "duration_ms": 0.294
+            }
+          ],
+          "query_candidate_locations": 63,
+          "unique_recommendations": 6,
+          "retailer_scope": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "hard_constraints": [
+            "illustrative fitment",
+            "minimum load/speed",
+            "quantity at one location",
+            "freshness",
+            "delivery limit"
+          ],
+          "filters": {
+            "vehicle_id": "V01",
+            "size": "225/55R17",
+            "store_id": "S01",
+            "quantity": 4,
+            "budget": 150.0,
+            "min_load_index": 98,
+            "min_speed_rank": 4,
+            "season": "any",
+            "priority": "balanced",
+            "max_lead_days": 3
+          },
+          "preference_changes": [],
+          "weights": {
+            "Comfort": 0.25,
+            "Wet grip": 0.25,
+            "Price": 0.2,
+            "Proximity": 0.15,
+            "Delivery": 0.15
+          },
+          "data_version": "synthetic-v1-seed-7",
+          "rules_version": "eligibility-v1-ranking-v1",
+          "as_of": "2026-10-11T12:00:00+00:00",
+          "scenario": "standard",
+          "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
+          "total_ms": 4.751
+        },
+        "no_result": null
+      }
+    },
+    {
+      "scenario": "nearby",
+      "passed": true,
+      "runs": 20,
+      "p50_ms": 4.292,
+      "p95_ms": 4.792,
+      "output": {
+        "session_id": "f5d7909c2691f61913b06b1f0db8fe81",
+        "revision": 1,
+        "filters": {
+          "vehicle_id": "V01",
+          "size": "225/55R17",
+          "store_id": "S01",
+          "quantity": 4,
+          "budget": 150.0,
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "season": "any",
+          "priority": "balanced",
+          "max_lead_days": 3
+        },
+        "vehicle": {
+          "vehicle_id": "V01",
+          "name": "Sample sedan",
+          "size": "225/55R17",
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "fitment_version": "illustrative-fitment-v1"
+        },
+        "recommendations": [
+          {
+            "product_id": "T0266",
+            "brand": "Ridgepoint",
+            "name": "Touring 266",
+            "size": "225/55R17",
+            "load_index": 103,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 113.74,
+            "comfort": 10,
+            "wet_grip": 9,
+            "warranty_miles": 70000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 8,
+            "observed_epoch": 1791719460,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.24173333333333336,
+            "delivery_feature": 1,
+            "score": 80.811,
+            "age_minutes": 9.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 22.5,
+              "Price": 4.835,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "8 available at North retailer. Illustrative comfort 10/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0266"
+          },
+          {
+            "product_id": "T0046",
+            "brand": "Ridgepoint",
+            "name": "Essential 046",
+            "size": "225/55R17",
+            "load_index": 101,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "all-season",
+            "price": 111.83,
+            "comfort": 9,
+            "wet_grip": 9,
+            "warranty_miles": 50000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 5,
+            "observed_epoch": 1791718920,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.25446666666666673,
+            "delivery_feature": 1,
+            "score": 78.565,
+            "age_minutes": 18.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 22.5,
+              "Price": 5.089,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "5 available at North retailer. Illustrative comfort 9/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0046"
+          },
+          {
+            "product_id": "T0176",
+            "brand": "Arcway",
+            "name": "Touring 176",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 99.07,
+            "comfort": 7,
+            "wet_grip": 9,
+            "warranty_miles": 60000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 6,
+            "observed_epoch": 1791719280,
+            "comfort_feature": 0.7,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.33953333333333335,
+            "delivery_feature": 1,
+            "score": 75.267,
+            "age_minutes": 12.0,
+            "score_contributions": {
+              "Comfort": 17.5,
+              "Wet grip": 22.5,
+              "Price": 6.791,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "6 available at North retailer. Illustrative comfort 7/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0176"
+          },
+          {
+            "product_id": "T0291",
+            "brand": "Daymark",
+            "name": "Premium 291",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "winter",
+            "price": 108.1,
+            "comfort": 8,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Premium",
+            "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10.",
+            "store_id": "S02",
+            "location_name": "West stockroom",
+            "kind": "warehouse",
+            "lead_days": 1,
+            "distance": 4.6,
+            "available_quantity": 11,
+            "observed_epoch": 1791719400,
+            "comfort_feature": 0.8,
+            "wet_feature": 0.8,
+            "proximity_feature": 0.9382411147426917,
+            "price_feature": 0.2793333333333333,
+            "delivery_feature": 0.9333333333333333,
+            "score": 73.66,
+            "age_minutes": 10.0,
+            "score_contributions": {
+              "Comfort": 20.0,
+              "Wet grip": 20.0,
+              "Price": 5.587,
+              "Proximity": 14.074,
+              "Delivery": 14.0
+            },
+            "explanation": "11 available at West stockroom. Illustrative comfort 8/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0291"
+          },
+          {
+            "product_id": "T0011",
+            "brand": "Daymark",
+            "name": "Touring 011",
+            "size": "225/55R17",
+            "load_index": 100,
+            "speed_rank": 6,
+            "speed_symbol": "Y",
+            "season": "summer",
+            "price": 130.31,
+            "comfort": 9,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10.",
+            "store_id": "S02",
+            "location_name": "West stockroom",
+            "kind": "warehouse",
+            "lead_days": 1,
+            "distance": 4.6,
+            "available_quantity": 4,
+            "observed_epoch": 1791719760,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.8,
+            "proximity_feature": 0.9382411147426917,
+            "price_feature": 0.13126666666666664,
+            "delivery_feature": 0.9333333333333333,
+            "score": 73.199,
+            "age_minutes": 4.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 20.0,
+              "Price": 2.625,
+              "Proximity": 14.074,
+              "Delivery": 14.0
+            },
+            "explanation": "4 available at West stockroom. Illustrative comfort 9/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0011"
+          },
+          {
+            "product_id": "T0116",
+            "brand": "Arcway",
+            "name": "Touring 116",
+            "size": "225/55R17",
+            "load_index": 98,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 125.45,
+            "comfort": 6,
+            "wet_grip": 10,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 6/10 and wet grip 10/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 10,
+            "observed_epoch": 1791719160,
+            "comfort_feature": 0.6,
+            "wet_feature": 1.0,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.16366666666666663,
+            "delivery_feature": 1,
+            "score": 71.749,
+            "age_minutes": 14.0,
+            "score_contributions": {
+              "Comfort": 15.0,
+              "Wet grip": 25.0,
+              "Price": 3.273,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "10 available at North retailer. Illustrative comfort 6/10. Illustrative wet grip 10/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0116"
+          }
+        ],
+        "premium_option": {
+          "product_id": "T0002",
+          "brand": "Ridgepoint",
+          "name": "Touring 002",
+          "size": "225/55R17",
+          "load_index": 100,
+          "speed_rank": 4,
+          "speed_symbol": "V",
+          "season": "all-season",
+          "price": 165.0,
+          "comfort": 10,
+          "wet_grip": 10,
+          "warranty_miles": 70000,
+          "tier": "Touring",
+          "description": "Illustrative product specification, not a manufacturer performance claim.",
+          "store_id": "S03",
+          "location_name": "North retailer",
+          "kind": "store",
+          "lead_days": 0,
+          "distance": 7.6,
+          "available_quantity": 8,
+          "observed_epoch": 1791719760,
+          "comfort_feature": 1.0,
+          "wet_feature": 1.0,
+          "proximity_feature": 0.898402545802347,
+          "price_feature": 0.12,
+          "delivery_feature": 1,
+          "score": 80.876,
+          "above_budget": true,
+          "extra_per_tire": 51.26,
+          "age_minutes": 4.0,
+          "score_contributions": {
+            "Comfort": 25.0,
+            "Wet grip": 25.0,
+            "Price": 2.4,
+            "Proximity": 13.476,
+            "Delivery": 15.0
+          },
+          "explanation": "8 available at North retailer. Illustrative comfort 10/10. Illustrative wet grip 10/10.",
+          "highlight_keys": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "citation": "synthetic-catalog:T0002"
+        },
+        "explanation": {
+          "mode": "template",
+          "status": "ready",
+          "highlights": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "context": [
+            {
+              "product_id": "T0002",
+              "description": "Illustrative product specification, not a manufacturer performance claim."
+            },
+            {
+              "product_id": "T0011",
+              "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0046",
+              "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0116",
+              "description": "Fictional touring tire. Illustrative comfort 6/10 and wet grip 10/10."
+            },
+            {
+              "product_id": "T0176",
+              "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0266",
+              "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0291",
+              "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10."
+            }
+          ],
+          "policy": "Models select emphasis keys; facts and citations are rendered by application code."
+        },
+        "trace": {
+          "request_id": "3d97e02d79933566",
+          "stages": [
+            {
+              "component": "api",
+              "label": "Resolve server-defined demo retailer scope",
+              "duration_ms": 0.18
+            },
+            {
+              "component": "state",
+              "label": "Merge typed preferences before querying",
+              "duration_ms": 0.019
+            },
+            {
+              "component": "sql",
+              "label": "SQL eligibility, inventory joins and ranking (one measured query)",
+              "duration_ms": 1.032
+            },
+            {
+              "component": "explain",
+              "label": "Scoped product facts and bounded explanations",
+              "duration_ms": 0.277
+            }
+          ],
+          "query_candidate_locations": 47,
+          "unique_recommendations": 6,
+          "retailer_scope": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "hard_constraints": [
+            "illustrative fitment",
+            "minimum load/speed",
+            "quantity at one location",
+            "freshness",
+            "delivery limit"
+          ],
+          "filters": {
+            "vehicle_id": "V01",
+            "size": "225/55R17",
+            "store_id": "S01",
+            "quantity": 4,
+            "budget": 150.0,
+            "min_load_index": 98,
+            "min_speed_rank": 4,
+            "season": "any",
+            "priority": "balanced",
+            "max_lead_days": 3
+          },
+          "preference_changes": [],
+          "weights": {
+            "Comfort": 0.25,
+            "Wet grip": 0.25,
+            "Price": 0.2,
+            "Proximity": 0.15,
+            "Delivery": 0.15
+          },
+          "data_version": "synthetic-v1-seed-7",
+          "rules_version": "eligibility-v1-ranking-v1",
+          "as_of": "2026-10-11T12:00:00+00:00",
+          "scenario": "nearby",
+          "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
+          "total_ms": 4.1
+        },
+        "no_result": null
+      }
+    },
+    {
+      "scenario": "quantity",
+      "passed": true,
+      "runs": 20,
+      "p50_ms": 4.001,
+      "p95_ms": 4.168,
+      "output": {
+        "session_id": "45c5eeb13192b8da5f2835e3f829139f",
+        "revision": 1,
+        "filters": {
+          "vehicle_id": "V01",
+          "size": "225/55R17",
+          "store_id": "S01",
+          "quantity": 4,
+          "budget": 150.0,
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "season": "any",
+          "priority": "balanced",
+          "max_lead_days": 3
+        },
+        "vehicle": {
+          "vehicle_id": "V01",
+          "name": "Sample sedan",
+          "size": "225/55R17",
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "fitment_version": "illustrative-fitment-v1"
+        },
+        "recommendations": [
+          {
+            "product_id": "T0266",
+            "brand": "Ridgepoint",
+            "name": "Touring 266",
+            "size": "225/55R17",
+            "load_index": 103,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 113.74,
+            "comfort": 10,
+            "wet_grip": 9,
+            "warranty_miles": 70000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 8,
+            "observed_epoch": 1791719460,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.24173333333333336,
+            "delivery_feature": 1,
+            "score": 80.811,
+            "age_minutes": 9.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 22.5,
+              "Price": 4.835,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "8 available at North retailer. Illustrative comfort 10/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0266"
+          },
+          {
+            "product_id": "T0046",
+            "brand": "Ridgepoint",
+            "name": "Essential 046",
+            "size": "225/55R17",
+            "load_index": 101,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "all-season",
+            "price": 111.83,
+            "comfort": 9,
+            "wet_grip": 9,
+            "warranty_miles": 50000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 5,
+            "observed_epoch": 1791718920,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.25446666666666673,
+            "delivery_feature": 1,
+            "score": 78.565,
+            "age_minutes": 18.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 22.5,
+              "Price": 5.089,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "5 available at North retailer. Illustrative comfort 9/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0046"
+          },
+          {
+            "product_id": "T0176",
+            "brand": "Arcway",
+            "name": "Touring 176",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 99.07,
+            "comfort": 7,
+            "wet_grip": 9,
+            "warranty_miles": 60000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 6,
+            "observed_epoch": 1791719280,
+            "comfort_feature": 0.7,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.33953333333333335,
+            "delivery_feature": 1,
+            "score": 75.267,
+            "age_minutes": 12.0,
+            "score_contributions": {
+              "Comfort": 17.5,
+              "Wet grip": 22.5,
+              "Price": 6.791,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "6 available at North retailer. Illustrative comfort 7/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0176"
+          },
+          {
+            "product_id": "T0291",
+            "brand": "Daymark",
+            "name": "Premium 291",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "winter",
+            "price": 108.1,
+            "comfort": 8,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Premium",
+            "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10.",
+            "store_id": "S02",
+            "location_name": "West stockroom",
+            "kind": "warehouse",
+            "lead_days": 1,
+            "distance": 4.6,
+            "available_quantity": 11,
+            "observed_epoch": 1791719400,
+            "comfort_feature": 0.8,
+            "wet_feature": 0.8,
+            "proximity_feature": 0.9382411147426917,
+            "price_feature": 0.2793333333333333,
+            "delivery_feature": 0.9333333333333333,
+            "score": 73.66,
+            "age_minutes": 10.0,
+            "score_contributions": {
+              "Comfort": 20.0,
+              "Wet grip": 20.0,
+              "Price": 5.587,
+              "Proximity": 14.074,
+              "Delivery": 14.0
+            },
+            "explanation": "11 available at West stockroom. Illustrative comfort 8/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0291"
+          },
+          {
+            "product_id": "T0011",
+            "brand": "Daymark",
+            "name": "Touring 011",
+            "size": "225/55R17",
+            "load_index": 100,
+            "speed_rank": 6,
+            "speed_symbol": "Y",
+            "season": "summer",
+            "price": 130.31,
+            "comfort": 9,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10.",
+            "store_id": "S02",
+            "location_name": "West stockroom",
+            "kind": "warehouse",
+            "lead_days": 1,
+            "distance": 4.6,
+            "available_quantity": 4,
+            "observed_epoch": 1791719760,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.8,
+            "proximity_feature": 0.9382411147426917,
+            "price_feature": 0.13126666666666664,
+            "delivery_feature": 0.9333333333333333,
+            "score": 73.199,
+            "age_minutes": 4.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 20.0,
+              "Price": 2.625,
+              "Proximity": 14.074,
+              "Delivery": 14.0
+            },
+            "explanation": "4 available at West stockroom. Illustrative comfort 9/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0011"
+          },
+          {
+            "product_id": "T0116",
+            "brand": "Arcway",
+            "name": "Touring 116",
+            "size": "225/55R17",
+            "load_index": 98,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 125.45,
+            "comfort": 6,
+            "wet_grip": 10,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 6/10 and wet grip 10/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 10,
+            "observed_epoch": 1791719160,
+            "comfort_feature": 0.6,
+            "wet_feature": 1.0,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.16366666666666663,
+            "delivery_feature": 1,
+            "score": 71.749,
+            "age_minutes": 14.0,
+            "score_contributions": {
+              "Comfort": 15.0,
+              "Wet grip": 25.0,
+              "Price": 3.273,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "10 available at North retailer. Illustrative comfort 6/10. Illustrative wet grip 10/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0116"
+          }
+        ],
+        "premium_option": {
+          "product_id": "T0002",
+          "brand": "Ridgepoint",
+          "name": "Touring 002",
+          "size": "225/55R17",
+          "load_index": 100,
+          "speed_rank": 4,
+          "speed_symbol": "V",
+          "season": "all-season",
+          "price": 165.0,
+          "comfort": 10,
+          "wet_grip": 10,
+          "warranty_miles": 70000,
+          "tier": "Touring",
+          "description": "Illustrative product specification, not a manufacturer performance claim.",
+          "store_id": "S03",
+          "location_name": "North retailer",
+          "kind": "store",
+          "lead_days": 0,
+          "distance": 7.6,
+          "available_quantity": 8,
+          "observed_epoch": 1791719760,
+          "comfort_feature": 1.0,
+          "wet_feature": 1.0,
+          "proximity_feature": 0.898402545802347,
+          "price_feature": 0.12,
+          "delivery_feature": 1,
+          "score": 80.876,
+          "above_budget": true,
+          "extra_per_tire": 51.26,
+          "age_minutes": 4.0,
+          "score_contributions": {
+            "Comfort": 25.0,
+            "Wet grip": 25.0,
+            "Price": 2.4,
+            "Proximity": 13.476,
+            "Delivery": 15.0
+          },
+          "explanation": "8 available at North retailer. Illustrative comfort 10/10. Illustrative wet grip 10/10.",
+          "highlight_keys": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "citation": "synthetic-catalog:T0002"
+        },
+        "explanation": {
+          "mode": "template",
+          "status": "ready",
+          "highlights": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "context": [
+            {
+              "product_id": "T0002",
+              "description": "Illustrative product specification, not a manufacturer performance claim."
+            },
+            {
+              "product_id": "T0011",
+              "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0046",
+              "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0116",
+              "description": "Fictional touring tire. Illustrative comfort 6/10 and wet grip 10/10."
+            },
+            {
+              "product_id": "T0176",
+              "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0266",
+              "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0291",
+              "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10."
+            }
+          ],
+          "policy": "Models select emphasis keys; facts and citations are rendered by application code."
+        },
+        "trace": {
+          "request_id": "9d372638b4d0c672",
+          "stages": [
+            {
+              "component": "api",
+              "label": "Resolve server-defined demo retailer scope",
+              "duration_ms": 0.205
+            },
+            {
+              "component": "state",
+              "label": "Merge typed preferences before querying",
+              "duration_ms": 0.02
+            },
+            {
+              "component": "sql",
+              "label": "SQL eligibility, inventory joins and ranking (one measured query)",
+              "duration_ms": 1.009
+            },
+            {
+              "component": "explain",
+              "label": "Scoped product facts and bounded explanations",
+              "duration_ms": 0.272
+            }
+          ],
+          "query_candidate_locations": 47,
+          "unique_recommendations": 6,
+          "retailer_scope": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "hard_constraints": [
+            "illustrative fitment",
+            "minimum load/speed",
+            "quantity at one location",
+            "freshness",
+            "delivery limit"
+          ],
+          "filters": {
+            "vehicle_id": "V01",
+            "size": "225/55R17",
+            "store_id": "S01",
+            "quantity": 4,
+            "budget": 150.0,
+            "min_load_index": 98,
+            "min_speed_rank": 4,
+            "season": "any",
+            "priority": "balanced",
+            "max_lead_days": 3
+          },
+          "preference_changes": [],
+          "weights": {
+            "Comfort": 0.25,
+            "Wet grip": 0.25,
+            "Price": 0.2,
+            "Proximity": 0.15,
+            "Delivery": 0.15
+          },
+          "data_version": "synthetic-v1-seed-7",
+          "rules_version": "eligibility-v1-ranking-v1",
+          "as_of": "2026-10-11T12:00:00+00:00",
+          "scenario": "quantity",
+          "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
+          "total_ms": 4.018
+        },
+        "no_result": null
+      }
+    },
+    {
+      "scenario": "stale",
+      "passed": true,
+      "runs": 20,
+      "p50_ms": 4.154,
+      "p95_ms": 4.671,
+      "output": {
+        "session_id": "b8e63d2329cf8dff010a37f575c62abb",
+        "revision": 1,
+        "filters": {
+          "vehicle_id": "V01",
+          "size": "225/55R17",
+          "store_id": "S01",
+          "quantity": 4,
+          "budget": 150.0,
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "season": "any",
+          "priority": "balanced",
+          "max_lead_days": 3
+        },
+        "vehicle": {
+          "vehicle_id": "V01",
+          "name": "Sample sedan",
+          "size": "225/55R17",
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "fitment_version": "illustrative-fitment-v1"
+        },
+        "recommendations": [
+          {
+            "product_id": "T0266",
+            "brand": "Ridgepoint",
+            "name": "Touring 266",
+            "size": "225/55R17",
+            "load_index": 103,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 113.74,
+            "comfort": 10,
+            "wet_grip": 9,
+            "warranty_miles": 70000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 8,
+            "observed_epoch": 1791719460,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.24173333333333336,
+            "delivery_feature": 1,
+            "score": 80.811,
+            "age_minutes": 9.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 22.5,
+              "Price": 4.835,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "8 available at North retailer. Illustrative comfort 10/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0266"
+          },
+          {
+            "product_id": "T0046",
+            "brand": "Ridgepoint",
+            "name": "Essential 046",
+            "size": "225/55R17",
+            "load_index": 101,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "all-season",
+            "price": 111.83,
+            "comfort": 9,
+            "wet_grip": 9,
+            "warranty_miles": 50000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 5,
+            "observed_epoch": 1791718920,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.25446666666666673,
+            "delivery_feature": 1,
+            "score": 78.565,
+            "age_minutes": 18.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 22.5,
+              "Price": 5.089,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "5 available at North retailer. Illustrative comfort 9/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0046"
+          },
+          {
+            "product_id": "T0176",
+            "brand": "Arcway",
+            "name": "Touring 176",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 99.07,
+            "comfort": 7,
+            "wet_grip": 9,
+            "warranty_miles": 60000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 6,
+            "observed_epoch": 1791719280,
+            "comfort_feature": 0.7,
+            "wet_feature": 0.9,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.33953333333333335,
+            "delivery_feature": 1,
+            "score": 75.267,
+            "age_minutes": 12.0,
+            "score_contributions": {
+              "Comfort": 17.5,
+              "Wet grip": 22.5,
+              "Price": 6.791,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "6 available at North retailer. Illustrative comfort 7/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0176"
+          },
+          {
+            "product_id": "T0291",
+            "brand": "Daymark",
+            "name": "Premium 291",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "winter",
+            "price": 108.1,
+            "comfort": 8,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Premium",
+            "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10.",
+            "store_id": "S02",
+            "location_name": "West stockroom",
+            "kind": "warehouse",
+            "lead_days": 1,
+            "distance": 4.6,
+            "available_quantity": 11,
+            "observed_epoch": 1791719400,
+            "comfort_feature": 0.8,
+            "wet_feature": 0.8,
+            "proximity_feature": 0.9382411147426917,
+            "price_feature": 0.2793333333333333,
+            "delivery_feature": 0.9333333333333333,
+            "score": 73.66,
+            "age_minutes": 10.0,
+            "score_contributions": {
+              "Comfort": 20.0,
+              "Wet grip": 20.0,
+              "Price": 5.587,
+              "Proximity": 14.074,
+              "Delivery": 14.0
+            },
+            "explanation": "11 available at West stockroom. Illustrative comfort 8/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0291"
+          },
+          {
+            "product_id": "T0011",
+            "brand": "Daymark",
+            "name": "Touring 011",
+            "size": "225/55R17",
+            "load_index": 100,
+            "speed_rank": 6,
+            "speed_symbol": "Y",
+            "season": "summer",
+            "price": 130.31,
+            "comfort": 9,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10.",
+            "store_id": "S02",
+            "location_name": "West stockroom",
+            "kind": "warehouse",
+            "lead_days": 1,
+            "distance": 4.6,
+            "available_quantity": 4,
+            "observed_epoch": 1791719760,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.8,
+            "proximity_feature": 0.9382411147426917,
+            "price_feature": 0.13126666666666664,
+            "delivery_feature": 0.9333333333333333,
+            "score": 73.199,
+            "age_minutes": 4.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 20.0,
+              "Price": 2.625,
+              "Proximity": 14.074,
+              "Delivery": 14.0
+            },
+            "explanation": "4 available at West stockroom. Illustrative comfort 9/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0011"
+          },
+          {
+            "product_id": "T0116",
+            "brand": "Arcway",
+            "name": "Touring 116",
+            "size": "225/55R17",
+            "load_index": 98,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 125.45,
+            "comfort": 6,
+            "wet_grip": 10,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 6/10 and wet grip 10/10.",
+            "store_id": "S03",
+            "location_name": "North retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 7.6,
+            "available_quantity": 10,
+            "observed_epoch": 1791719160,
+            "comfort_feature": 0.6,
+            "wet_feature": 1.0,
+            "proximity_feature": 0.898402545802347,
+            "price_feature": 0.16366666666666663,
+            "delivery_feature": 1,
+            "score": 71.749,
+            "age_minutes": 14.0,
+            "score_contributions": {
+              "Comfort": 15.0,
+              "Wet grip": 25.0,
+              "Price": 3.273,
+              "Proximity": 13.476,
+              "Delivery": 15.0
+            },
+            "explanation": "10 available at North retailer. Illustrative comfort 6/10. Illustrative wet grip 10/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0116"
+          }
+        ],
+        "premium_option": {
+          "product_id": "T0002",
+          "brand": "Ridgepoint",
+          "name": "Touring 002",
+          "size": "225/55R17",
+          "load_index": 100,
+          "speed_rank": 4,
+          "speed_symbol": "V",
+          "season": "all-season",
+          "price": 165.0,
+          "comfort": 10,
+          "wet_grip": 10,
+          "warranty_miles": 70000,
+          "tier": "Touring",
+          "description": "Illustrative product specification, not a manufacturer performance claim.",
+          "store_id": "S03",
+          "location_name": "North retailer",
+          "kind": "store",
+          "lead_days": 0,
+          "distance": 7.6,
+          "available_quantity": 8,
+          "observed_epoch": 1791719760,
+          "comfort_feature": 1.0,
+          "wet_feature": 1.0,
+          "proximity_feature": 0.898402545802347,
+          "price_feature": 0.12,
+          "delivery_feature": 1,
+          "score": 80.876,
+          "above_budget": true,
+          "extra_per_tire": 51.26,
+          "age_minutes": 4.0,
+          "score_contributions": {
+            "Comfort": 25.0,
+            "Wet grip": 25.0,
+            "Price": 2.4,
+            "Proximity": 13.476,
+            "Delivery": 15.0
+          },
+          "explanation": "8 available at North retailer. Illustrative comfort 10/10. Illustrative wet grip 10/10.",
+          "highlight_keys": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "citation": "synthetic-catalog:T0002"
+        },
+        "explanation": {
+          "mode": "template",
+          "status": "ready",
+          "highlights": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "context": [
+            {
+              "product_id": "T0002",
+              "description": "Illustrative product specification, not a manufacturer performance claim."
+            },
+            {
+              "product_id": "T0011",
+              "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0046",
+              "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0116",
+              "description": "Fictional touring tire. Illustrative comfort 6/10 and wet grip 10/10."
+            },
+            {
+              "product_id": "T0176",
+              "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0266",
+              "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0291",
+              "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10."
+            }
+          ],
+          "policy": "Models select emphasis keys; facts and citations are rendered by application code."
+        },
+        "trace": {
+          "request_id": "2fa624f2d1333a22",
+          "stages": [
+            {
+              "component": "api",
+              "label": "Resolve server-defined demo retailer scope",
+              "duration_ms": 0.177
+            },
+            {
+              "component": "state",
+              "label": "Merge typed preferences before querying",
+              "duration_ms": 0.026
+            },
+            {
+              "component": "sql",
+              "label": "SQL eligibility, inventory joins and ranking (one measured query)",
+              "duration_ms": 1.024
+            },
+            {
+              "component": "explain",
+              "label": "Scoped product facts and bounded explanations",
+              "duration_ms": 0.278
+            }
+          ],
+          "query_candidate_locations": 47,
+          "unique_recommendations": 6,
+          "retailer_scope": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "hard_constraints": [
+            "illustrative fitment",
+            "minimum load/speed",
+            "quantity at one location",
+            "freshness",
+            "delivery limit"
+          ],
+          "filters": {
+            "vehicle_id": "V01",
+            "size": "225/55R17",
+            "store_id": "S01",
+            "quantity": 4,
+            "budget": 150.0,
+            "min_load_index": 98,
+            "min_speed_rank": 4,
+            "season": "any",
+            "priority": "balanced",
+            "max_lead_days": 3
+          },
+          "preference_changes": [],
+          "weights": {
+            "Comfort": 0.25,
+            "Wet grip": 0.25,
+            "Price": 0.2,
+            "Proximity": 0.15,
+            "Delivery": 0.15
+          },
+          "data_version": "synthetic-v1-seed-7",
+          "rules_version": "eligibility-v1-ranking-v1",
+          "as_of": "2026-10-11T12:00:00+00:00",
+          "scenario": "stale",
+          "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
+          "total_ms": 4.109
+        },
+        "no_result": null
+      }
+    },
+    {
+      "scenario": "no_match",
+      "passed": true,
+      "runs": 20,
+      "p50_ms": 1.692,
+      "p95_ms": 1.848,
+      "output": {
+        "session_id": "bfc0870a1f8465b6e50b8fe768093978",
+        "revision": 1,
+        "filters": {
+          "vehicle_id": "V01",
+          "size": "225/55R17",
+          "store_id": "S01",
+          "quantity": 4,
+          "budget": 60.0,
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "season": "any",
+          "priority": "balanced",
+          "max_lead_days": 3
+        },
+        "vehicle": {
+          "vehicle_id": "V01",
+          "name": "Sample sedan",
+          "size": "225/55R17",
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "fitment_version": "illustrative-fitment-v1"
+        },
+        "recommendations": [],
+        "premium_option": null,
+        "explanation": {
+          "mode": "template",
+          "status": "no_candidates",
+          "highlights": [],
+          "context": []
+        },
+        "trace": {
+          "request_id": "f468550549165df6",
+          "stages": [
+            {
+              "component": "api",
+              "label": "Resolve server-defined demo retailer scope",
+              "duration_ms": 0.147
+            },
+            {
+              "component": "state",
+              "label": "Merge typed preferences before querying",
+              "duration_ms": 0.011
+            },
+            {
+              "component": "sql",
+              "label": "SQL eligibility, inventory joins and ranking (one measured query)",
+              "duration_ms": 0.362
+            },
+            {
+              "component": "explain",
+              "label": "Scoped product facts and bounded explanations",
+              "duration_ms": 0.001
+            }
+          ],
+          "query_candidate_locations": 0,
+          "unique_recommendations": 0,
+          "retailer_scope": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "hard_constraints": [
+            "illustrative fitment",
+            "minimum load/speed",
+            "quantity at one location",
+            "freshness",
+            "delivery limit"
+          ],
+          "filters": {
+            "vehicle_id": "V01",
+            "size": "225/55R17",
+            "store_id": "S01",
+            "quantity": 4,
+            "budget": 60.0,
+            "min_load_index": 98,
+            "min_speed_rank": 4,
+            "season": "any",
+            "priority": "balanced",
+            "max_lead_days": 3
+          },
+          "preference_changes": [],
+          "weights": {
+            "Comfort": 0.25,
+            "Wet grip": 0.25,
+            "Price": 0.2,
+            "Proximity": 0.15,
+            "Delivery": 0.15
+          },
+          "data_version": "synthetic-v1-seed-7",
+          "rules_version": "eligibility-v1-ranking-v1",
+          "as_of": "2026-10-11T12:00:00+00:00",
+          "scenario": "no_match",
+          "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
+          "total_ms": 1.405
+        },
+        "no_result": {
+          "message": "No product meets all current requirements.",
+          "suggestions": [
+            "Increase budget explicitly",
+            "Allow a longer lead time",
+            "Choose another permitted store"
+          ],
+          "preserved": "Fitment, minimum specifications and freshness remain enforced."
+        }
+      }
+    },
+    {
+      "scenario": "upgrade",
+      "passed": true,
+      "runs": 20,
+      "p50_ms": 4.739,
+      "p95_ms": 5.236,
+      "output": {
+        "session_id": "7721e083034185f75b8b90b5a03fe242",
+        "revision": 1,
+        "filters": {
+          "vehicle_id": "V01",
+          "size": "225/55R17",
+          "store_id": "S01",
+          "quantity": 4,
+          "budget": 150.0,
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "season": "any",
+          "priority": "balanced",
+          "max_lead_days": 3
+        },
+        "vehicle": {
+          "vehicle_id": "V01",
+          "name": "Sample sedan",
+          "size": "225/55R17",
+          "min_load_index": 98,
+          "min_speed_rank": 4,
+          "fitment_version": "illustrative-fitment-v1"
+        },
+        "recommendations": [
+          {
+            "product_id": "T0266",
+            "brand": "Ridgepoint",
+            "name": "Touring 266",
+            "size": "225/55R17",
+            "load_index": 103,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 113.74,
+            "comfort": 10,
+            "wet_grip": 9,
+            "warranty_miles": 70000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 4,
+            "observed_epoch": 1791719280,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.9,
+            "proximity_feature": 1.0,
+            "price_feature": 0.24173333333333336,
+            "delivery_feature": 1,
+            "score": 82.335,
+            "age_minutes": 12.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 22.5,
+              "Price": 4.835,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "4 available at Loop retailer. Illustrative comfort 10/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0266"
+          },
+          {
+            "product_id": "T0046",
+            "brand": "Ridgepoint",
+            "name": "Essential 046",
+            "size": "225/55R17",
+            "load_index": 101,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "all-season",
+            "price": 111.83,
+            "comfort": 9,
+            "wet_grip": 9,
+            "warranty_miles": 50000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 6,
+            "observed_epoch": 1791719160,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.9,
+            "proximity_feature": 1.0,
+            "price_feature": 0.25446666666666673,
+            "delivery_feature": 1,
+            "score": 80.089,
+            "age_minutes": 14.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 22.5,
+              "Price": 5.089,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "6 available at Loop retailer. Illustrative comfort 9/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0046"
+          },
+          {
+            "product_id": "T0176",
+            "brand": "Arcway",
+            "name": "Touring 176",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 5,
+            "speed_symbol": "W",
+            "season": "summer",
+            "price": 99.07,
+            "comfort": 7,
+            "wet_grip": 9,
+            "warranty_miles": 60000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 4,
+            "observed_epoch": 1791719040,
+            "comfort_feature": 0.7,
+            "wet_feature": 0.9,
+            "proximity_feature": 1.0,
+            "price_feature": 0.33953333333333335,
+            "delivery_feature": 1,
+            "score": 76.791,
+            "age_minutes": 16.0,
+            "score_contributions": {
+              "Comfort": 17.5,
+              "Wet grip": 22.5,
+              "Price": 6.791,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "4 available at Loop retailer. Illustrative comfort 7/10. Illustrative wet grip 9/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0176"
+          },
+          {
+            "product_id": "T0286",
+            "brand": "Ridgepoint",
+            "name": "Essential 286",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "all-season",
+            "price": 144.95,
+            "comfort": 10,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Essential",
+            "description": "Fictional essential tire. Illustrative comfort 10/10 and wet grip 8/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 12,
+            "observed_epoch": 1791719760,
+            "comfort_feature": 1.0,
+            "wet_feature": 0.8,
+            "proximity_feature": 1.0,
+            "price_feature": 0.033666666666666734,
+            "delivery_feature": 1,
+            "score": 75.673,
+            "age_minutes": 4.0,
+            "score_contributions": {
+              "Comfort": 25.0,
+              "Wet grip": 20.0,
+              "Price": 0.673,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "12 available at Loop retailer. Illustrative comfort 10/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0286"
+          },
+          {
+            "product_id": "T0291",
+            "brand": "Daymark",
+            "name": "Premium 291",
+            "size": "225/55R17",
+            "load_index": 99,
+            "speed_rank": 4,
+            "speed_symbol": "V",
+            "season": "winter",
+            "price": 108.1,
+            "comfort": 8,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Premium",
+            "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 5,
+            "observed_epoch": 1791718920,
+            "comfort_feature": 0.8,
+            "wet_feature": 0.8,
+            "proximity_feature": 1.0,
+            "price_feature": 0.2793333333333333,
+            "delivery_feature": 1,
+            "score": 75.587,
+            "age_minutes": 18.0,
+            "score_contributions": {
+              "Comfort": 20.0,
+              "Wet grip": 20.0,
+              "Price": 5.587,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "5 available at Loop retailer. Illustrative comfort 8/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0291"
+          },
+          {
+            "product_id": "T0011",
+            "brand": "Daymark",
+            "name": "Touring 011",
+            "size": "225/55R17",
+            "load_index": 100,
+            "speed_rank": 6,
+            "speed_symbol": "Y",
+            "season": "summer",
+            "price": 130.31,
+            "comfort": 9,
+            "wet_grip": 8,
+            "warranty_miles": 40000,
+            "tier": "Touring",
+            "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10.",
+            "store_id": "S01",
+            "location_name": "Loop retailer",
+            "kind": "store",
+            "lead_days": 0,
+            "distance": 0.0,
+            "available_quantity": 7,
+            "observed_epoch": 1791718980,
+            "comfort_feature": 0.9,
+            "wet_feature": 0.8,
+            "proximity_feature": 1.0,
+            "price_feature": 0.13126666666666664,
+            "delivery_feature": 1,
+            "score": 75.125,
+            "age_minutes": 17.0,
+            "score_contributions": {
+              "Comfort": 22.5,
+              "Wet grip": 20.0,
+              "Price": 2.625,
+              "Proximity": 15.0,
+              "Delivery": 15.0
+            },
+            "explanation": "7 available at Loop retailer. Illustrative comfort 9/10. Illustrative wet grip 8/10.",
+            "highlight_keys": [
+              "availability",
+              "comfort",
+              "wet_grip"
+            ],
+            "citation": "synthetic-catalog:T0011"
+          }
+        ],
+        "premium_option": {
+          "product_id": "T0002",
+          "brand": "Ridgepoint",
+          "name": "Touring 002",
+          "size": "225/55R17",
+          "load_index": 100,
+          "speed_rank": 4,
+          "speed_symbol": "V",
+          "season": "all-season",
+          "price": 165.0,
+          "comfort": 10,
+          "wet_grip": 10,
+          "warranty_miles": 70000,
+          "tier": "Touring",
+          "description": "Illustrative product specification, not a manufacturer performance claim.",
+          "store_id": "S01",
+          "location_name": "Loop retailer",
+          "kind": "store",
+          "lead_days": 0,
+          "distance": 0.0,
+          "available_quantity": 8,
+          "observed_epoch": 1791719220,
+          "comfort_feature": 1.0,
+          "wet_feature": 1.0,
+          "proximity_feature": 1.0,
+          "price_feature": 0.12,
+          "delivery_feature": 1,
+          "score": 82.4,
+          "above_budget": true,
+          "extra_per_tire": 51.26,
+          "age_minutes": 13.0,
+          "score_contributions": {
+            "Comfort": 25.0,
+            "Wet grip": 25.0,
+            "Price": 2.4,
+            "Proximity": 15.0,
+            "Delivery": 15.0
+          },
+          "explanation": "8 available at Loop retailer. Illustrative comfort 10/10. Illustrative wet grip 10/10.",
+          "highlight_keys": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "citation": "synthetic-catalog:T0002"
+        },
+        "explanation": {
+          "mode": "template",
+          "status": "ready",
+          "highlights": [
+            "availability",
+            "comfort",
+            "wet_grip"
+          ],
+          "context": [
+            {
+              "product_id": "T0002",
+              "description": "Illustrative product specification, not a manufacturer performance claim."
+            },
+            {
+              "product_id": "T0011",
+              "description": "Fictional touring tire. Illustrative comfort 9/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0046",
+              "description": "Fictional essential tire. Illustrative comfort 9/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0176",
+              "description": "Fictional touring tire. Illustrative comfort 7/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0266",
+              "description": "Fictional touring tire. Illustrative comfort 10/10 and wet grip 9/10."
+            },
+            {
+              "product_id": "T0286",
+              "description": "Fictional essential tire. Illustrative comfort 10/10 and wet grip 8/10."
+            },
+            {
+              "product_id": "T0291",
+              "description": "Fictional premium tire. Illustrative comfort 8/10 and wet grip 8/10."
+            }
+          ],
+          "policy": "Models select emphasis keys; facts and citations are rendered by application code."
+        },
+        "trace": {
+          "request_id": "7cfc8edd769e1fc2",
+          "stages": [
+            {
+              "component": "api",
+              "label": "Resolve server-defined demo retailer scope",
+              "duration_ms": 0.254
+            },
+            {
+              "component": "state",
+              "label": "Merge typed preferences before querying",
+              "duration_ms": 0.036
+            },
+            {
+              "component": "sql",
+              "label": "SQL eligibility, inventory joins and ranking (one measured query)",
+              "duration_ms": 1.224
+            },
+            {
+              "component": "explain",
+              "label": "Scoped product facts and bounded explanations",
+              "duration_ms": 0.473
+            }
+          ],
+          "query_candidate_locations": 63,
+          "unique_recommendations": 6,
+          "retailer_scope": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "hard_constraints": [
+            "illustrative fitment",
+            "minimum load/speed",
+            "quantity at one location",
+            "freshness",
+            "delivery limit"
+          ],
+          "filters": {
+            "vehicle_id": "V01",
+            "size": "225/55R17",
+            "store_id": "S01",
+            "quantity": 4,
+            "budget": 150.0,
+            "min_load_index": 98,
+            "min_speed_rank": 4,
+            "season": "any",
+            "priority": "balanced",
+            "max_lead_days": 3
+          },
+          "preference_changes": [],
+          "weights": {
+            "Comfort": 0.25,
+            "Wet grip": 0.25,
+            "Price": 0.2,
+            "Proximity": 0.15,
+            "Delivery": 0.15
+          },
+          "data_version": "synthetic-v1-seed-7",
+          "rules_version": "eligibility-v1-ranking-v1",
+          "as_of": "2026-10-11T12:00:00+00:00",
+          "scenario": "upgrade",
+          "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
+          "total_ms": 5.444
+        },
+        "no_result": null
+      }
+    }
+  ],
+  "passed": true
+}

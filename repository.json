@@ -1,0 +1,8 @@
+{
+  "project": "tire",
+  "name": "tire-recommendation-demo-public",
+  "app": "tire_demo.app:app",
+  "docs": "tire-demo/docs",
+  "portfolio": "https://nithinchandra.com",
+  "baseline": "764057a"
+}

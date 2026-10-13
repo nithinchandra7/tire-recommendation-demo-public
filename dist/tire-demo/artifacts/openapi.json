@@ -1,0 +1,1004 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Synthetic Tire Recommendation Demo",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health Api Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tire/options": {
+      "get": {
+        "summary": "Options",
+        "operationId": "options_api_tire_options_get",
+        "parameters": [
+          {
+            "name": "x-demo-retailer",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Demo-Retailer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Options Api Tire Options Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tire/recommendations": {
+      "post": {
+        "summary": "Recommend",
+        "operationId": "recommend_api_tire_recommendations_post",
+        "parameters": [
+          {
+            "name": "x-demo-retailer",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Demo-Retailer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommendationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tire/traces/{request_id}": {
+      "get": {
+        "summary": "Trace",
+        "operationId": "trace_api_tire_traces__request_id__get",
+        "parameters": [
+          {
+            "name": "request_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Request Id"
+            }
+          },
+          {
+            "name": "x-demo-retailer",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Demo-Retailer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tire/inventory": {
+      "post": {
+        "summary": "Inventory",
+        "operationId": "inventory_api_tire_inventory_post",
+        "parameters": [
+          {
+            "name": "x-demo-retailer",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Demo-Retailer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InventoryUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "Response Inventory Api Tire Inventory Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/demo": {
+      "get": {
+        "summary": "Demo",
+        "operationId": "demo_demo_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ExecutionStage": {
+        "properties": {
+          "component": {
+            "type": "string",
+            "title": "Component"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "duration_ms": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Duration Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "component",
+          "label",
+          "duration_ms"
+        ],
+        "title": "ExecutionStage"
+      },
+      "ExecutionTrace": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "stages": {
+            "items": {
+              "$ref": "#/components/schemas/ExecutionStage"
+            },
+            "type": "array",
+            "title": "Stages"
+          },
+          "query_candidate_locations": {
+            "type": "integer",
+            "title": "Query Candidate Locations"
+          },
+          "unique_recommendations": {
+            "type": "integer",
+            "title": "Unique Recommendations"
+          },
+          "retailer_scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Retailer Scope"
+          },
+          "hard_constraints": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Hard Constraints"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/Filters"
+          },
+          "preference_changes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Preference Changes"
+          },
+          "weights": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Weights"
+          },
+          "data_version": {
+            "type": "string",
+            "title": "Data Version"
+          },
+          "rules_version": {
+            "type": "string",
+            "title": "Rules Version"
+          },
+          "as_of": {
+            "type": "string",
+            "title": "As Of"
+          },
+          "scenario": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "nearby",
+              "quantity",
+              "stale",
+              "no_match",
+              "upgrade"
+            ],
+            "title": "Scenario"
+          },
+          "simulation": {
+            "type": "string",
+            "title": "Simulation"
+          },
+          "total_ms": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Total Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_id",
+          "stages",
+          "query_candidate_locations",
+          "unique_recommendations",
+          "retailer_scope",
+          "hard_constraints",
+          "filters",
+          "preference_changes",
+          "weights",
+          "data_version",
+          "rules_version",
+          "as_of",
+          "scenario",
+          "simulation",
+          "total_ms"
+        ],
+        "title": "ExecutionTrace"
+      },
+      "Filters": {
+        "properties": {
+          "vehicle_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^V\\d{2}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vehicle Id",
+            "default": "V01"
+          },
+          "size": {
+            "type": "string",
+            "pattern": "^\\d{3}/\\d{2}R\\d{2}$",
+            "title": "Size",
+            "default": "225/55R17"
+          },
+          "store_id": {
+            "type": "string",
+            "pattern": "^S\\d{2}$",
+            "title": "Store Id",
+            "default": "S01"
+          },
+          "quantity": {
+            "type": "integer",
+            "maximum": 8.0,
+            "minimum": 1.0,
+            "title": "Quantity",
+            "default": 4
+          },
+          "budget": {
+            "type": "number",
+            "maximum": 1000.0,
+            "minimum": 25.0,
+            "title": "Budget",
+            "default": 150
+          },
+          "min_load_index": {
+            "type": "integer",
+            "maximum": 130.0,
+            "minimum": 75.0,
+            "title": "Min Load Index",
+            "default": 98
+          },
+          "min_speed_rank": {
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 1.0,
+            "title": "Min Speed Rank",
+            "default": 4
+          },
+          "season": {
+            "type": "string",
+            "enum": [
+              "any",
+              "all-season",
+              "summer",
+              "winter"
+            ],
+            "title": "Season",
+            "default": "any"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "balanced",
+              "comfort",
+              "wet",
+              "budget"
+            ],
+            "title": "Priority",
+            "default": "balanced"
+          },
+          "max_lead_days": {
+            "type": "integer",
+            "maximum": 14.0,
+            "minimum": 0.0,
+            "title": "Max Lead Days",
+            "default": 3
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Filters"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InventoryUpdate": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,80}$",
+            "title": "Event Id"
+          },
+          "product_id": {
+            "type": "string",
+            "pattern": "^T\\d{4}$",
+            "title": "Product Id"
+          },
+          "store_id": {
+            "type": "string",
+            "pattern": "^S\\d{2}$",
+            "title": "Store Id"
+          },
+          "quantity": {
+            "type": "integer",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Quantity"
+          },
+          "observed_epoch": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Observed Epoch"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_id",
+          "product_id",
+          "store_id",
+          "quantity",
+          "observed_epoch"
+        ],
+        "title": "InventoryUpdate"
+      },
+      "Recommendation": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "title": "Product Id"
+          },
+          "brand": {
+            "type": "string",
+            "title": "Brand"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "tier": {
+            "type": "string",
+            "title": "Tier"
+          },
+          "size": {
+            "type": "string",
+            "title": "Size"
+          },
+          "load_index": {
+            "type": "integer",
+            "title": "Load Index"
+          },
+          "speed_rank": {
+            "type": "integer",
+            "title": "Speed Rank"
+          },
+          "speed_symbol": {
+            "type": "string",
+            "title": "Speed Symbol"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "price": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Price"
+          },
+          "comfort": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Comfort"
+          },
+          "wet_grip": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Wet Grip"
+          },
+          "store_id": {
+            "type": "string",
+            "title": "Store Id"
+          },
+          "location_name": {
+            "type": "string",
+            "title": "Location Name"
+          },
+          "available_quantity": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Available Quantity"
+          },
+          "observed_epoch": {
+            "type": "integer",
+            "title": "Observed Epoch"
+          },
+          "age_minutes": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Age Minutes"
+          },
+          "distance": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Distance"
+          },
+          "lead_days": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Lead Days"
+          },
+          "score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "score_contributions": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Score Contributions"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "citation": {
+            "type": "string",
+            "title": "Citation"
+          },
+          "highlight_keys": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Highlight Keys"
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_id",
+          "brand",
+          "name",
+          "tier",
+          "size",
+          "load_index",
+          "speed_rank",
+          "speed_symbol",
+          "season",
+          "price",
+          "comfort",
+          "wet_grip",
+          "store_id",
+          "location_name",
+          "available_quantity",
+          "observed_epoch",
+          "age_minutes",
+          "distance",
+          "lead_days",
+          "score",
+          "score_contributions",
+          "explanation",
+          "citation",
+          "highlight_keys"
+        ],
+        "title": "Recommendation"
+      },
+      "RecommendationRequest": {
+        "properties": {
+          "filters": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filters"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "scenario": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "nearby",
+              "quantity",
+              "stale",
+              "no_match",
+              "upgrade"
+            ],
+            "title": "Scenario",
+            "default": "standard"
+          },
+          "session_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{32}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Session Id"
+          },
+          "follow_up": {
+            "type": "string",
+            "maxLength": 300,
+            "title": "Follow Up",
+            "default": ""
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "RecommendationRequest"
+      },
+      "RecommendationResponse": {
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "revision": {
+            "type": "integer",
+            "title": "Revision"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/Filters"
+          },
+          "vehicle": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vehicle"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/Recommendation"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          },
+          "premium_option": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Upgrade"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "explanation": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Explanation"
+          },
+          "trace": {
+            "$ref": "#/components/schemas/ExecutionTrace"
+          },
+          "no_result": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "No Result"
+          }
+        },
+        "type": "object",
+        "required": [
+          "session_id",
+          "revision",
+          "filters",
+          "vehicle",
+          "recommendations",
+          "premium_option",
+          "explanation",
+          "trace",
+          "no_result"
+        ],
+        "title": "RecommendationResponse"
+      },
+      "Upgrade": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "title": "Product Id"
+          },
+          "brand": {
+            "type": "string",
+            "title": "Brand"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "tier": {
+            "type": "string",
+            "title": "Tier"
+          },
+          "size": {
+            "type": "string",
+            "title": "Size"
+          },
+          "load_index": {
+            "type": "integer",
+            "title": "Load Index"
+          },
+          "speed_rank": {
+            "type": "integer",
+            "title": "Speed Rank"
+          },
+          "speed_symbol": {
+            "type": "string",
+            "title": "Speed Symbol"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "price": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Price"
+          },
+          "comfort": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Comfort"
+          },
+          "wet_grip": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Wet Grip"
+          },
+          "store_id": {
+            "type": "string",
+            "title": "Store Id"
+          },
+          "location_name": {
+            "type": "string",
+            "title": "Location Name"
+          },
+          "available_quantity": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Available Quantity"
+          },
+          "observed_epoch": {
+            "type": "integer",
+            "title": "Observed Epoch"
+          },
+          "age_minutes": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Age Minutes"
+          },
+          "distance": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Distance"
+          },
+          "lead_days": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Lead Days"
+          },
+          "score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "score_contributions": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Score Contributions"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "citation": {
+            "type": "string",
+            "title": "Citation"
+          },
+          "highlight_keys": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Highlight Keys"
+          },
+          "above_budget": {
+            "type": "boolean",
+            "title": "Above Budget"
+          },
+          "extra_per_tire": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Extra Per Tire"
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_id",
+          "brand",
+          "name",
+          "tier",
+          "size",
+          "load_index",
+          "speed_rank",
+          "speed_symbol",
+          "season",
+          "price",
+          "comfort",
+          "wet_grip",
+          "store_id",
+          "location_name",
+          "available_quantity",
+          "observed_epoch",
+          "age_minutes",
+          "distance",
+          "lead_days",
+          "score",
+          "score_contributions",
+          "explanation",
+          "citation",
+          "highlight_keys",
+          "above_budget",
+          "extra_per_tire"
+        ],
+        "title": "Upgrade"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

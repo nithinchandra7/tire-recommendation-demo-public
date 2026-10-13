@@ -1,0 +1,17 @@
+{
+  "name": "tire-recommendation-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint dist/tire-demo/*.js scripts/*.cjs",
+    "format:check": "prettier --check dist/tire-demo/*.js dist/tire-demo/*.css dist/tire-demo/*.html scripts/*.cjs",
+    "format": "prettier --write dist/tire-demo/*.js dist/tire-demo/*.css dist/tire-demo/*.html scripts/*.cjs",
+    "test": "node --test tire-demo/tests-js/*.test.cjs",
+    "architecture": "node scripts/build-demo-diagrams.cjs --check",
+    "check": "npm run lint && npm run format:check && npm test && npm run architecture"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.10"
+  }
+}
