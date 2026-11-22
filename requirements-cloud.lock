@@ -33,12 +33,13 @@ botocore==1.43.111 \
     #   boto3
     #   s3transfer
     #   snowflake-connector-python
-certifi==2026.7.22 \
-    --hash=sha256:62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775 \
-    --hash=sha256:741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55
+certifi==2026.11.20 \
+    --hash=sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f \
+    --hash=sha256:af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e
     # via
     #   httpcore
     #   httpx
+    #   nithin-tire-demo (pyproject.toml)
     #   requests
     #   snowflake-connector-python
 cffi==2.1.1 \
@@ -390,10 +391,12 @@ fastapi==0.143.0 \
     --hash=sha256:1acffe48206a80917cf7dac21992b5c44b25384e8902bf745c1fd9dabcf6c51f \
     --hash=sha256:3e9395fd35276425b61b516a31fdd7c77fe2af83e41b4da22e30696fb1304c5d
     # via nithin-tire-demo (pyproject.toml)
-filelock==3.32.7 \
-    --hash=sha256:37b8a3d9811b0f9aef7e5ec5c71bb320de52df51e6ca9bcd6f5ad81187660da7 \
-    --hash=sha256:65ff0d0190ea42038b32bda4b77834fb05be2cad4c5b9b01aa4dfb3614536e52
-    # via snowflake-connector-python
+filelock==4.3.0 \
+    --hash=sha256:143407310acf479e82d88068e3b9a6486f45fb410c0ed8729fe7359eaabeb6f1 \
+    --hash=sha256:f933f39f7e01249a4a49b9abab30edc6d4b874624c3de5dd0b0d137aa8adb979
+    # via
+    #   nithin-tire-demo (pyproject.toml)
+    #   snowflake-connector-python
 h11==0.16.0 \
     --hash=sha256:4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1 \
     --hash=sha256:63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86
@@ -422,10 +425,12 @@ jmespath==1.1.0 \
     # via
     #   boto3
     #   botocore
-opentelemetry-api==1.45.1 \
-    --hash=sha256:aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75 \
-    --hash=sha256:b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb
-    # via fastapi
+opentelemetry-api==1.45.2 \
+    --hash=sha256:2cbd737377e710ee740d261c94e93fa0f08e6d037c18f17513cc0a2d94479a34 \
+    --hash=sha256:d7b0008e21e5fd61cbe7a7f34ca3b6905a78ab677d9bc395e299359c75cda6b4
+    # via
+    #   fastapi
+    #   nithin-tire-demo (pyproject.toml)
 packaging==26.3 \
     --hash=sha256:94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79 \
     --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
@@ -615,38 +620,33 @@ six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
     # via python-dateutil
-snowflake-connector-python==4.8.0 \
-    --hash=sha256:03e248f510ae82a3b190146c060e865905e5e07df6cf3e365ede66c67de136b2 \
-    --hash=sha256:131db582e383b57af0b345f212c9afba87637e8ef68494b9b4282e6713030dc9 \
-    --hash=sha256:1ac5bc235c9f1124bfa1b14413f340ef2bdf7c28746af37280eae3ad7877afa8 \
-    --hash=sha256:1bf40aa8684eb0769fedeb53a702b274472571812835d5a03fb9dcf9254333b9 \
-    --hash=sha256:1c80df2fc5e16f3a49e6d16b1cdca0358308c1db2eae22d82aa7c038c80cc913 \
-    --hash=sha256:1cc888b81b709781eb855bbee062f06a9f52427ab8f9a39a31f39de475e39465 \
-    --hash=sha256:2a59396eade5b7b18cad0ac1fa2882a5ddfa5153e56e16c9d3d4a9d5e2d92332 \
-    --hash=sha256:2fde1216c4c1e4015ad7e39b7b39b6a44a29551f4d7a3dfc64b0905e66dc24ac \
-    --hash=sha256:3566b6884073dd1c36905c875aa3013991ae814a75f539c6ea1f2e8a1f72dd41 \
-    --hash=sha256:39fe1794c63508fb25fda1a57cdf00293dc0630b32d4cda86d5bed2da09eb256 \
-    --hash=sha256:3b38204c9c8a9c985cdf36df4eaa16f7d0b8a14f86410f39ab7b49794df4cf03 \
-    --hash=sha256:3fdea6d45bd22142293ece1224f2ad3a3c169a2f4a768d4be828faf09a640b2b \
-    --hash=sha256:43583fb372a3bb698c2ce4717d2598e5452b40543a59b8095146a98f8ecd7408 \
-    --hash=sha256:5ac7214337e2ca4797a63b12e2d6778b85b95bacbb1e8892e8ef5cdb2696bcdb \
-    --hash=sha256:6ba170f3584a425a1a5eff0e53ed656d45db9ef513d9232789cf58c5254b8194 \
-    --hash=sha256:6c0d7be79b333c1fa85d2860928f286a11abe5789d007dbc6d940313a744f8af \
-    --hash=sha256:7612ef5b4a93438fec6fff0e0d2541302f29001d3e77b861140d00d9085c0dce \
-    --hash=sha256:7a1566b0fcae33f2c7ec1bbd09965d8045a9388e94d333a88d03ddcfb6d4550a \
-    --hash=sha256:8db3eea888247e4b41b55b8b419613eb1c4c76ec4984341543f849bf9532ae1b \
-    --hash=sha256:a887838e59afa9d6d5f0fb52f55fcdb8726987acce646daa9aa3c698a3c99690 \
-    --hash=sha256:b95cec73e136a3a373bf19bc19ecc5707557ae9df02674665240cfd46ea78820 \
-    --hash=sha256:b9bddddc713aaa20dc5ff5635896f66e50c0fed88b6a905b088e727d046e361d \
-    --hash=sha256:bccf23cd780c85bfa74982f286d2aacd663ba0135ba7441a13e98cabdb2def1e \
-    --hash=sha256:bf2304eedfd94694291a71c96cddb4490e474d2c232625f528813f5caa79c098 \
-    --hash=sha256:bf8d819fd2c943d9be9d521fb6259b28dca05844e6a4d585a9f6e287141ae6dd \
-    --hash=sha256:c40a058f87dfbca1e65122932afb41c42cb9c3b7cb12826204527b41dd0f39ef \
-    --hash=sha256:da28999b3d6cfc4860c8c537cfb02968e9784f3ec8fe50d92a7348133ea75362 \
-    --hash=sha256:e3de20df18a0279cc913ecd073b79eae860fa00e3d0e8cb9cfb276ecf85fe319 \
-    --hash=sha256:ebcbad6b16f8228f28bf62b443b6f111d11bceea2612efa2004eccb827923e6b \
-    --hash=sha256:f2a3cbcd3e6c4a449165f78bb331e1570ce6026cc21a2673313b4912d80745c0 \
-    --hash=sha256:f978f897f85fd39cc8f768971c4667f8ca0278ea369373dfc459ae008c9472a5
+snowflake-connector-python==4.8.1 \
+    --hash=sha256:137ffbcd74e09b5bb4533266a23467660a68ed97922e384376474485e766c47d \
+    --hash=sha256:16b5f58134fc795955db0a3bf550dd07df691435fb1e7208a9220e7839ec9719 \
+    --hash=sha256:1d8178d9e90c8dc008cd3514dfc89adb4f80a49e85820de51175df72fd3772b6 \
+    --hash=sha256:1f709334cb6ae2632dc9aea11041bd35fd57851182bca40ef64f24103fc1d97f \
+    --hash=sha256:20efe486609f98cd96a1da2ce5d8519866aaf9d42549f4103421d99eef13b344 \
+    --hash=sha256:23e3d374cc8f6e6adb9a68fa5510b9e1b09ca0d264d9a2f80472e2a8d9383749 \
+    --hash=sha256:24e0f1a0d45434a076e563883df0331ebe3e19d038249833498f2d41b9877671 \
+    --hash=sha256:28a0af61cb5ca0e49e90392d9b1e16ecf3fa359a9252d0f334c34939f17a71b2 \
+    --hash=sha256:315bf08c92fc15c4550643132373c995321743f45650dba9b65db60da169afe9 \
+    --hash=sha256:39cd08312293c2b116c91e530bcc8e9ffd977afb90f04b718f7e7d7ae85b2f8b \
+    --hash=sha256:3a90c5d91b11e65a6185ae4878bbe1a85b2254ca78535a1a4703c67001aa48d1 \
+    --hash=sha256:4237f74b0265e2266ff50c9ebb5a7b45cc94d929111682e18ce04de11b6157fc \
+    --hash=sha256:42705a96dcd1e9c6cdc60faeb6d9f90f207abc7d0697f78635c4a7b95d5605d1 \
+    --hash=sha256:529a7addbe45aa42ef05c2d49bc5a4182c087d85f7d42c837c673329dc6693ac \
+    --hash=sha256:72cec25f38def137000f4930e99adbd8b5af99a92dad7b4d9d7ffce988cc75e4 \
+    --hash=sha256:8155576e1f5489b88dff01cbb8f656f8e32833112c239d716c947cfe99233cab \
+    --hash=sha256:90e73ddd4f3481089e37f8fd9c3269215a2de9c29bd050a83596d1c4eb2c763c \
+    --hash=sha256:94a1ec863c27dc091ad3e9f7ee77ce3c6c25222dde4fcabc32384c5cd9d28ac7 \
+    --hash=sha256:a668c2b98929281c23eb8d382ad5b141424adaf1b5e2b69ef3ec063aeb55f94f \
+    --hash=sha256:b4d31d0e47fb5ceace4fd3b963f5d604b463e034da8bf5e6bd985680596d054d \
+    --hash=sha256:c92a2e0618517dcf7a89296c329e2463401cb7a7740b9233d532d9a94ef47785 \
+    --hash=sha256:cf5872b8a0b5b394adea0bf233e13f21e9061c4ccf82e6165b1742cb44689a11 \
+    --hash=sha256:d28227747e768c76f6148f6853b502de17bffe09711dc6a3da21cd0e7712331c \
+    --hash=sha256:d29a14bbd2ec7d395fcd619b7af9be4e920eb6bd70b409a176e940e9ee7c552e \
+    --hash=sha256:d8c9cda50255e813d5b70e813e21d0d1358c6acb2d52f9a956b941471e254e7b \
+    --hash=sha256:ff1ce7ef2aa476b2346be8e77218ddd6c58278354798cd89fb151c655dbd110d
     # via nithin-tire-demo (pyproject.toml)
 sortedcontainers==2.4.0 \
     --hash=sha256:25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88 \

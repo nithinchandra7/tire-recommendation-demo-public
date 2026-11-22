@@ -33,3 +33,5 @@ Cloud account/workspace values remain placeholders in `.env.example` and the clo
 ## Relationship to the portfolio
 
 This standalone repository is extracted from the reviewed integrated baseline `764057a`. The portfolio keeps a combined preview for presentation; each standalone owns its focused release and checks. Changes are synchronized deliberately, without automatic submodules or credentials. Review API/evidence drift and run both suites before copying changes between builds.
+
+Security and local hosting: [Security boundaries](SECURITY.md).

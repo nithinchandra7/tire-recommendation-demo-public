@@ -35,6 +35,7 @@ INCLUDE = [
     ".pre-commit-config.yaml",
     "eslint.config.mjs",
     "README.md",
+    "SECURITY.md",
     "CONTRIBUTING.md",
     "repository.json",
     "requirements.lock",

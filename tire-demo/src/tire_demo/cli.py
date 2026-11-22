@@ -272,6 +272,7 @@ def package_source() -> None:
         ".pre-commit-config.yaml",
         "eslint.config.mjs",
         "README.md",
+        "SECURITY.md",
         "CONTRIBUTING.md",
         "build-diagrams.cjs",
         "check-architectures.cjs",

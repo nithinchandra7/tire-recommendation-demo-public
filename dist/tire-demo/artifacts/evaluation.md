@@ -8,12 +8,12 @@ Dataset: synthetic-v1-seed-7.
 
 | Scenario | Checks | p50 ms | p95 ms |
 |---|---|---:|---:|
-| standard | PASS | 4.708 | 5.239 |
-| nearby | PASS | 4.292 | 4.792 |
-| quantity | PASS | 4.001 | 4.168 |
-| stale | PASS | 4.154 | 4.671 |
-| no_match | PASS | 1.692 | 1.848 |
-| upgrade | PASS | 4.739 | 5.236 |
+| standard | PASS | 6.662 | 7.207 |
+| nearby | PASS | 6.156 | 7.69 |
+| quantity | PASS | 6.831 | 8.032 |
+| stale | PASS | 6.036 | 6.775 |
+| no_match | PASS | 2.028 | 2.352 |
+| upgrade | PASS | 6.322 | 6.55 |
 
 ## Measurement limits
 

@@ -10,6 +10,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .data import DATA_VERSION, SCOPES
 from .engine import Engine
+from .local_security import install_local_boundary
 from .models import InventoryUpdate, RecommendationRequest, RecommendationResponse
 from .repository import SnowflakeRepository, SqliteRepository, StateConflictError
 from .settings import Settings
@@ -30,6 +31,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         openapi_url="/api/openapi.json",
     )
     application.state.engine = engine
+    install_local_boundary(application)
     application.state.store = state
 
     def retailer_scope(retailer: str | None) -> str:

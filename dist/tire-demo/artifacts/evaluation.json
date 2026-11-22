@@ -1,5 +1,5 @@
 {
-  "implementation_fingerprint": "271df3d330d167e324efd246758d94fa7117d38fefac58a16bd9a71ee99ae204",
+  "implementation_fingerprint": "1ec3532354cdd1bcf338f74de2db38c8baf806ebb95493f5a584a9ddf407979c",
   "dataset": "synthetic-v1-seed-7",
   "products": 400,
   "locations": 8,
@@ -17,10 +17,10 @@
       "scenario": "standard",
       "passed": true,
       "runs": 20,
-      "p50_ms": 4.708,
-      "p95_ms": 5.239,
+      "p50_ms": 6.662,
+      "p95_ms": 7.207,
       "output": {
-        "session_id": "2e5e48074b7df506ed0c61f361952e6e",
+        "session_id": "77f318198328eda8665e3d23d7d321b5",
         "revision": 1,
         "filters": {
           "vehicle_id": "V01",
@@ -395,27 +395,27 @@
           "policy": "Models select emphasis keys; facts and citations are rendered by application code."
         },
         "trace": {
-          "request_id": "86debdda25bed001",
+          "request_id": "70480404b183e92d",
           "stages": [
             {
               "component": "api",
               "label": "Resolve server-defined demo retailer scope",
-              "duration_ms": 0.188
+              "duration_ms": 0.223
             },
             {
               "component": "state",
               "label": "Merge typed preferences before querying",
-              "duration_ms": 0.024
+              "duration_ms": 0.025
             },
             {
               "component": "sql",
               "label": "SQL eligibility, inventory joins and ranking (one measured query)",
-              "duration_ms": 1.3
+              "duration_ms": 1.785
             },
             {
               "component": "explain",
               "label": "Scoped product facts and bounded explanations",
-              "duration_ms": 0.294
+              "duration_ms": 0.362
             }
           ],
           "query_candidate_locations": 63,
@@ -458,7 +458,7 @@
           "as_of": "2026-10-11T12:00:00+00:00",
           "scenario": "standard",
           "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
-          "total_ms": 4.751
+          "total_ms": 6.267
         },
         "no_result": null
       }
@@ -467,10 +467,10 @@
       "scenario": "nearby",
       "passed": true,
       "runs": 20,
-      "p50_ms": 4.292,
-      "p95_ms": 4.792,
+      "p50_ms": 6.156,
+      "p95_ms": 7.69,
       "output": {
-        "session_id": "f5d7909c2691f61913b06b1f0db8fe81",
+        "session_id": "b0afdd81bb4e9c61b5c9fb807326634e",
         "revision": 1,
         "filters": {
           "vehicle_id": "V01",
@@ -845,27 +845,27 @@
           "policy": "Models select emphasis keys; facts and citations are rendered by application code."
         },
         "trace": {
-          "request_id": "3d97e02d79933566",
+          "request_id": "46f916d0681c7a3e",
           "stages": [
             {
               "component": "api",
               "label": "Resolve server-defined demo retailer scope",
-              "duration_ms": 0.18
+              "duration_ms": 0.224
             },
             {
               "component": "state",
               "label": "Merge typed preferences before querying",
-              "duration_ms": 0.019
+              "duration_ms": 0.035
             },
             {
               "component": "sql",
               "label": "SQL eligibility, inventory joins and ranking (one measured query)",
-              "duration_ms": 1.032
+              "duration_ms": 1.53
             },
             {
               "component": "explain",
               "label": "Scoped product facts and bounded explanations",
-              "duration_ms": 0.277
+              "duration_ms": 0.74
             }
           ],
           "query_candidate_locations": 47,
@@ -908,7 +908,7 @@
           "as_of": "2026-10-11T12:00:00+00:00",
           "scenario": "nearby",
           "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
-          "total_ms": 4.1
+          "total_ms": 6.764
         },
         "no_result": null
       }
@@ -917,10 +917,10 @@
       "scenario": "quantity",
       "passed": true,
       "runs": 20,
-      "p50_ms": 4.001,
-      "p95_ms": 4.168,
+      "p50_ms": 6.831,
+      "p95_ms": 8.032,
       "output": {
-        "session_id": "45c5eeb13192b8da5f2835e3f829139f",
+        "session_id": "eeac4e274a93a0df4627da5fd735ba3d",
         "revision": 1,
         "filters": {
           "vehicle_id": "V01",
@@ -1295,27 +1295,27 @@
           "policy": "Models select emphasis keys; facts and citations are rendered by application code."
         },
         "trace": {
-          "request_id": "9d372638b4d0c672",
+          "request_id": "8daf977846b013c7",
           "stages": [
             {
               "component": "api",
               "label": "Resolve server-defined demo retailer scope",
-              "duration_ms": 0.205
+              "duration_ms": 0.247
             },
             {
               "component": "state",
               "label": "Merge typed preferences before querying",
-              "duration_ms": 0.02
+              "duration_ms": 0.027
             },
             {
               "component": "sql",
               "label": "SQL eligibility, inventory joins and ranking (one measured query)",
-              "duration_ms": 1.009
+              "duration_ms": 1.742
             },
             {
               "component": "explain",
               "label": "Scoped product facts and bounded explanations",
-              "duration_ms": 0.272
+              "duration_ms": 0.572
             }
           ],
           "query_candidate_locations": 47,
@@ -1358,7 +1358,7 @@
           "as_of": "2026-10-11T12:00:00+00:00",
           "scenario": "quantity",
           "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
-          "total_ms": 4.018
+          "total_ms": 6.912
         },
         "no_result": null
       }
@@ -1367,10 +1367,10 @@
       "scenario": "stale",
       "passed": true,
       "runs": 20,
-      "p50_ms": 4.154,
-      "p95_ms": 4.671,
+      "p50_ms": 6.036,
+      "p95_ms": 6.775,
       "output": {
-        "session_id": "b8e63d2329cf8dff010a37f575c62abb",
+        "session_id": "3fecc9bb18dff2fd63cf275577431e41",
         "revision": 1,
         "filters": {
           "vehicle_id": "V01",
@@ -1745,27 +1745,27 @@
           "policy": "Models select emphasis keys; facts and citations are rendered by application code."
         },
         "trace": {
-          "request_id": "2fa624f2d1333a22",
+          "request_id": "2e7a8788d82862b7",
           "stages": [
             {
               "component": "api",
               "label": "Resolve server-defined demo retailer scope",
-              "duration_ms": 0.177
+              "duration_ms": 0.23
             },
             {
               "component": "state",
               "label": "Merge typed preferences before querying",
-              "duration_ms": 0.026
+              "duration_ms": 0.022
             },
             {
               "component": "sql",
               "label": "SQL eligibility, inventory joins and ranking (one measured query)",
-              "duration_ms": 1.024
+              "duration_ms": 1.559
             },
             {
               "component": "explain",
               "label": "Scoped product facts and bounded explanations",
-              "duration_ms": 0.278
+              "duration_ms": 0.386
             }
           ],
           "query_candidate_locations": 47,
@@ -1808,7 +1808,7 @@
           "as_of": "2026-10-11T12:00:00+00:00",
           "scenario": "stale",
           "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
-          "total_ms": 4.109
+          "total_ms": 5.816
         },
         "no_result": null
       }
@@ -1817,10 +1817,10 @@
       "scenario": "no_match",
       "passed": true,
       "runs": 20,
-      "p50_ms": 1.692,
-      "p95_ms": 1.848,
+      "p50_ms": 2.028,
+      "p95_ms": 2.352,
       "output": {
-        "session_id": "bfc0870a1f8465b6e50b8fe768093978",
+        "session_id": "6d93b3513c50869824b2309416115192",
         "revision": 1,
         "filters": {
           "vehicle_id": "V01",
@@ -1851,22 +1851,22 @@
           "context": []
         },
         "trace": {
-          "request_id": "f468550549165df6",
+          "request_id": "9fc9b0e73a72be45",
           "stages": [
             {
               "component": "api",
               "label": "Resolve server-defined demo retailer scope",
-              "duration_ms": 0.147
+              "duration_ms": 0.253
             },
             {
               "component": "state",
               "label": "Merge typed preferences before querying",
-              "duration_ms": 0.011
+              "duration_ms": 0.032
             },
             {
               "component": "sql",
               "label": "SQL eligibility, inventory joins and ranking (one measured query)",
-              "duration_ms": 0.362
+              "duration_ms": 0.775
             },
             {
               "component": "explain",
@@ -1914,7 +1914,7 @@
           "as_of": "2026-10-11T12:00:00+00:00",
           "scenario": "no_match",
           "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
-          "total_ms": 1.405
+          "total_ms": 2.352
         },
         "no_result": {
           "message": "No product meets all current requirements.",
@@ -1931,10 +1931,10 @@
       "scenario": "upgrade",
       "passed": true,
       "runs": 20,
-      "p50_ms": 4.739,
-      "p95_ms": 5.236,
+      "p50_ms": 6.322,
+      "p95_ms": 6.55,
       "output": {
-        "session_id": "7721e083034185f75b8b90b5a03fe242",
+        "session_id": "0172efacb6b92433b06912fb2c6108ff",
         "revision": 1,
         "filters": {
           "vehicle_id": "V01",
@@ -2309,27 +2309,27 @@
           "policy": "Models select emphasis keys; facts and citations are rendered by application code."
         },
         "trace": {
-          "request_id": "7cfc8edd769e1fc2",
+          "request_id": "3c415ea86f54cb37",
           "stages": [
             {
               "component": "api",
               "label": "Resolve server-defined demo retailer scope",
-              "duration_ms": 0.254
+              "duration_ms": 0.237
             },
             {
               "component": "state",
               "label": "Merge typed preferences before querying",
-              "duration_ms": 0.036
+              "duration_ms": 0.027
             },
             {
               "component": "sql",
               "label": "SQL eligibility, inventory joins and ranking (one measured query)",
-              "duration_ms": 1.224
+              "duration_ms": 1.863
             },
             {
               "component": "explain",
               "label": "Scoped product facts and bounded explanations",
-              "duration_ms": 0.473
+              "duration_ms": 0.342
             }
           ],
           "query_candidate_locations": 63,
@@ -2372,7 +2372,7 @@
           "as_of": "2026-10-11T12:00:00+00:00",
           "scenario": "upgrade",
           "simulation": "Scenario overrides are request-local; stored inventory is unchanged.",
-          "total_ms": 5.444
+          "total_ms": 6.377
         },
         "no_result": null
       }
